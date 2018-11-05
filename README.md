@@ -26,12 +26,17 @@
 	1. [ ] `update` *Actionably* update a subreddit
 	1. [ ] `destroy` *Actionably* delete a subreddit
 1. [ ] Connect posts and subreddits.
-	- Each post has one subreddit.
 	- Each subreddit has many posts.
+	- Each post has one subreddit.
 	- Each post has many comments.
+	- Each comment has one post.
 	- Each comment has many comments. (**∞ stretch goal**)
 1. [ ] Sign Up & Log In
 1. [ ] Associate posts, comments, and votes with their author
+	- Each author has many posts.
+	- Each post has one author.
+	- Each author has many comments.
+	- Each comment has one author.
 1. [ ] `update` Vote a post up or downa
 1. [ ] `update` Vote a comment up or down
 1. [ ] Search
