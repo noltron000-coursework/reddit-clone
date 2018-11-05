@@ -46,5 +46,3 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 1. [ ] `update` Vote a post up or down
 1. [ ] `update` Vote a comment up or down
 1. [ ] Search Functionality
-
-##
