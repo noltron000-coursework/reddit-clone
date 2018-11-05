@@ -39,6 +39,7 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- Each comment has one post
 	- Each comment has many comments. (**∞ stretch goal**)
 1. [ ] Sign Up & Log In
+	- Need more information on Sign Up & Log In
 1. [ ] Associate posts, comments, and votes with their author
 	- Each author has many comments
 	- Each comment has one author
