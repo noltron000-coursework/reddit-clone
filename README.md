@@ -7,8 +7,16 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 - Node.js
 
 ## To Do:
+1. [ ] Complete `CRUD` of Subreddits
+	1. [ ] `index` *View* a list of all subreddits
+	1. [ ] `new` *View* subreddit creation page
+	1. [ ] `create` *Actionably* create a subreddit
+	1. [ ] `show` *View* a single subreddit in detail
+	1. [ ] `edit` *View* subreddit update-content page
+	1. [ ] `update` *Actionably* update a subreddit
+	1. [ ] `destroy` *Actionably* delete a subreddit
 1. [ ] Complete `CRUD` of Posts
-	1. [ ] `index` *View* a list of all posts
+	1. [ ] `index` *View* a list of all posts (on current `show` subreddit)
 	1. [ ] `new` *View* post creation page
 	1. [ ] `create` *Actionably* create a post
 	1. [ ] `show` *View* a single post in detail
@@ -23,15 +31,8 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	1. [ ] `edit` *View* comment update-content box (on current `show` post)
 	1. [ ] `update` *Actionably* update a comment (on current `show` post)
 	1. [ ] `destroy` *Actionably* delete a comment (on current `show` post)
-1. [ ] Complete `CRUD` of Subreddits
-	1. [ ] `index` *View* a list of all subreddits (on current `show` subreddit)
-	1. [ ] `new` *View* subreddit creation page
-	1. [ ] `create` *Actionably* create a subreddit
-	1. [ ] `show` *View* a single subreddit in detail
-	1. [ ] `edit` *View* subreddit update-content page
-	1. [ ] `update` *Actionably* update a subreddit
-	1. [ ] `destroy` *Actionably* delete a subreddit
 1. [ ] Connect posts and subreddits
+	- Each subreddit has one parent document
 	- Each subreddit has many posts
 	- Each post has one subreddit
 	- Each post has many comments
@@ -39,10 +40,10 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- Each comment has many comments. (**∞ stretch goal**)
 1. [ ] Sign Up & Log In
 1. [ ] Associate posts, comments, and votes with their author
-	- Each author has many posts
-	- Each post has one author
 	- Each author has many comments
 	- Each comment has one author
+	- Each author has many posts
+	- Each post has one author
 1. [ ] `update` Vote a post up or down
 1. [ ] `update` Vote a comment up or down
 1. [ ] Search Functionality
