@@ -1,6 +1,12 @@
 # BEW-1-2_reddit-clone
-## To Do:
+Reddit Clone is a project in Make School's Backend 1-2. By utilizing relationships, a large variety of tasks can be implemented. This can be cloned and transformed into other websites that might use a similar routing system.
 
+See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone-in-node-js">Make School</a>
+
+## Technologies Used
+- Node.js
+
+## To Do:
 1. [ ] Complete `CRUD` of Posts
 	1. [ ] `index` show a list of all posts
 	1. [ ] `new` *View* post creation page
@@ -40,3 +46,5 @@
 1. [ ] `update` Vote a post up or down
 1. [ ] `update` Vote a comment up or down
 1. [ ] Search Functionality
+
+##
