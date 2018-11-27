@@ -6,8 +6,11 @@ const app = express();
 const port = 3000;
 
 // set up handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+app.engine('.hbs', exphbs({
+	extname: '.hbs',
+	defaultLayout: 'main'
+}));
+app.set('view engine', 'hbs');
 
 // override with POST having ?_method=DELETE or ?_method=PUT
 // app.use(express.static('public'));
