@@ -15,7 +15,14 @@ app.engine('.hbs', exprHBS({
 }));
 app.set('view engine', 'hbs');
 
-// override with POST having ?_method=DELETE or ?_method=PUT
+// use body parser
+app.use(bodyParse.json());
+app.use(bodyParse.urlencoded({ extended: false }));
+
+// use validator - adding after parser init!
+app.use(exprValid());
+
+// // use method override - with POST having ?_method=DELETE or ?_method=PUT
 // app.use(express.static('public'));
 // app.use(methodOverride('_method'));
 
