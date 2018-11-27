@@ -15,9 +15,9 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- Add a CTA button that links to new-post
 1. [ ] Complete `CRUD` of Subreddits
 	1. [ ] `index` *View* a list of all subreddits
-	1. [ ] `new` *View* subreddit creation page
-		1. [ ] Make a posts#new route (/posts/new) and template (posts-new.hbs)
-		1. [ ] Add form to posts-new template
+	1. [X] `new` *View* subreddit creation page
+		1. [X] Make a posts#new route (/posts/new) and template (posts-new.hbs)
+		1. [X] Add form to posts-new template
 	1. [ ] `create` *Actionably* create a subreddit
 		1. [ ] Make create posts route and check that form data is sending to new route
 		1. [ ] Add Post model with mongoose
