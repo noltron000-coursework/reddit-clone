@@ -9,13 +9,16 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 ## To Do:
 1. [X] Start Templating
 	1. [X] Add & connect Handlebars
-	1. [X] Add Navbar
+	1. [ ] Add Navbar
+		- Add a logo that links to home
+		- Add an h1 that links to home
+		- Add a CTA button that links to new-post
 1. [ ] Complete `CRUD` of Subreddits
 	1. [ ] `index` *View* a list of all subreddits
 	1. [ ] `new` *View* subreddit creation page
-	1. [ ] `create` *Actionably* create a subreddit
-		1. [ ] Make a posts#new route (/posts/new) and template (posts-new.handlebars)
+		1. [ ] Make a posts#new route (/posts/new) and template (posts-new.hbs)
 		1. [ ] Add form to posts-new template
+	1. [ ] `create` *Actionably* create a subreddit
 		1. [ ] Make create posts route and check that form data is sending to new route
 		1. [ ] Add Post model with mongoose
 		1. [ ] Confirm posts are saving to database
