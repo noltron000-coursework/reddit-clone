@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 
 const posts = require('./controllers/posts.js')(app);
+const data = require('./data/reddit-db');
 
 // set up handlebars
 app.engine('.hbs', exprHBS({
