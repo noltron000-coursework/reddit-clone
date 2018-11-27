@@ -1,5 +1,7 @@
 const express = require('express');
-const exprhbs = require('express-handlebars');
+const exprHBS = require('express-handlebars');
+const bodyParse = require('body-parser');
+const exprValid = require('express-validator');
 
 const app = express();
 const port = 3000;
@@ -7,7 +9,7 @@ const port = 3000;
 const posts = require('./controllers/posts.js')(app);
 
 // set up handlebars
-app.engine('.hbs', exprhbs({
+app.engine('.hbs', exprHBS({
 	extname: '.hbs',
 	defaultLayout: 'main'
 }));
