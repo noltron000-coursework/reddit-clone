@@ -1,7 +1,21 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+let exphbs = require('express-handlebars');
 
-app.get('/', (req, res) => res.send('Hello World!'))
+const app = express();
+const port = 3000;
+
+// set up handlebars
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+// override with POST having ?_method=DELETE or ?_method=PUT
+app.use(express.static('public'));
+app.use(methodOverride('_method'));
+
+
+
+app.get('/', (req, res) => {
+	res.render('main')
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

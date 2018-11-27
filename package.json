@@ -17,6 +17,7 @@
 	},
 	"homepage": "https://github.com/noltron000/BEW-1-2_reddit-clone#readme",
 	"dependencies": {
+		"express-handlebars": "^3.0.0",
 		"handlebars": "^4.0.12"
 	}
 }
