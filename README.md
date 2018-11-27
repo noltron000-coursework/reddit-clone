@@ -14,11 +14,11 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	1. [ ] `index` *View* a list of all subreddits
 	1. [ ] `new` *View* subreddit creation page
 	1. [ ] `create` *Actionably* create a subreddit
-		- Make a posts#new route (/posts/new) and template (posts-new.handlebars)
-		- Add form to posts-new template
-		- Make create posts route and check that form data is sending to new route
-		- Add Post model with mongoose
-		- Confirm posts are saving to database
+		1. [ ] Make a posts#new route (/posts/new) and template (posts-new.handlebars)
+		1. [ ] Add form to posts-new template
+		1. [ ] Make create posts route and check that form data is sending to new route
+		1. [ ] Add Post model with mongoose
+		1. [ ] Confirm posts are saving to database
 	1. [ ] `show` *View* a single subreddit in detail
 	1. [ ] `edit` *View* subreddit update-content page
 	1. [ ] `update` *Actionably* update a subreddit
