@@ -7,6 +7,9 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 - Node.js
 
 ## To Do:
+1. [X] Start Templating
+	1. [X] Add & connect Handlebars
+	1. [X] Add Navbar
 1. [ ] Complete `CRUD` of Subreddits
 	1. [ ] `index` *View* a list of all subreddits
 	1. [ ] `new` *View* subreddit creation page
