@@ -1,12 +1,13 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
-
+const exprhbs = require('express-handlebars');
 
 const app = express();
 const port = 3000;
 
+const posts = require('./controllers/posts.js')(app);
+
 // set up handlebars
-app.engine('.hbs', exphbs({
+app.engine('.hbs', exprhbs({
 	extname: '.hbs',
 	defaultLayout: 'main'
 }));
@@ -15,7 +16,6 @@ app.set('view engine', 'hbs');
 // override with POST having ?_method=DELETE or ?_method=PUT
 // app.use(express.static('public'));
 // app.use(methodOverride('_method'));
-
 
 
 app.get('/', (req, res) => {
