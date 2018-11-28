@@ -32,7 +32,8 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [ ] `destroy` *Actionably* delete a subreddit
 - [ ] Complete `CRUD` of Posts
 	- [ ] `index` *View* a list of all posts (on current `show` subreddit)
-		- [ ] Make the root route (/) go to the posts#index route render a posts-index template
+		- [X] Make the index route @ `/flares` go to the `flares-index` route
+		- [ ] Render a flares-index template @ `/flares`
 		- [ ] Style the template and loop over the posts object
 	- [X] `new` *View* post creation page
 		- [X] Make a posts#new route (/posts/new) and template (posts-new.hbs)
