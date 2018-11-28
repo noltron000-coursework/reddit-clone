@@ -5,6 +5,14 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 
 ## Technologies Used
 - Node.js
+- Express
+- Express Handlebars
+- Express Validator
+- Body Parser
+- Server Architecture:
+	- MongoDB
+	- Mongoose
+	- Robo 3T
 
 ## To Do:
 1. [X] Start Templating

@@ -6,8 +6,6 @@ const exprValid = require('express-validator');
 const app = express();
 const port = 3000;
 
-const posts = require('./controllers/posts.js')(app);
-
 // set up handlebars
 app.engine('.hbs', exprHBS({
 	extname: '.hbs',
@@ -26,13 +24,17 @@ app.use(exprValid());
 // app.use(express.static('public'));
 // app.use(methodOverride('_method'));
 
+// require other files
+const flares = require('./controllers/flares.js')(app);
+const data = require('./data/flamewarz-db.js');
+
+// setting up basic routes
 app.get('/', (req, res) => {
 	res.render('home')
 })
 
-app.get('/posts/new', (req, res) => {
-	res.render('posts-new')
+app.get('/flares/new', (req, res) => {
+	res.render('flares-new')
 })
-
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

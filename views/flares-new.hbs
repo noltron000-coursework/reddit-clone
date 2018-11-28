@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+		<form action="/flares/new" method="post">
+			<legend>New Flare</legend>
+			<div class="form-group">
+				<label for="flare-title">Title</label>
+				<input type="text" name="title" class="form-control" id="flare-title" placeholder="Title">
+			</div>
+			<div class="form-group">
+				<label for="flare-url">Subflame</label>
+				<select type="url" name="subflame" class="form-control" id="flare-url" placeholder="https://www.google.com">
+					<option value="https://www.google.com" selected disabled hidden>Google</option>
+					<option value="https://www.google.com">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="flare-synopsis">Synopsis</label>
+				<textarea name="synopsis" class="form-control" id="flare-synopsis" placeholder="Title"></textarea>
+			</div>
+			<div class='text-right'>
+				<button type="submit" class="btn btn-primary">Flare Up</button>
+			</div>
+		</form>
+	</div>
+</div>
