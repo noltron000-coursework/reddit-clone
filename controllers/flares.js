@@ -2,7 +2,7 @@ const Post = require('../models/flare');
 
 module.exports = (app) => {
 	// CREATE
-	app.post('/posts/new', (req, res) => {
+	app.post('/flares/new', (req, res) => {
 		// INSTANTIATE INSTANCE OF POST MODEL
 		const post = new Post(req.body);
 		// SAVE INSTANCE OF POST MODEL TO DB
@@ -13,6 +13,6 @@ module.exports = (app) => {
 			console.log(err);
 
 			return res.redirect(`/`);
-		})
+		});
 	});
 };

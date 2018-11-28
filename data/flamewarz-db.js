@@ -7,11 +7,10 @@ mongoose.Promise = global.Promise;
 mongoose.connect(
 	url,
 	{ useNewUrlParser: true },
-	function (err, db) {
-		assert.equal(null, err);
-		console.log("Connected successfully to database");
-
+	(err, db) => {
 		// db.close(); turn on for testing
+		// assert.equal(null, err);
+		console.log("Connected successfully to database");
 	}
 );
 mongoose.connection.on("error", console.error.bind(console, "MongoDB connection Error:"));
