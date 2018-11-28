@@ -12,7 +12,7 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 - Server Architecture:
 	- MongoDB
 	- Mongoose
-	- RoboT3
+	- Robo 3T
 
 ## To Do:
 1. [X] Start Templating

@@ -6,8 +6,7 @@ const exprValid = require('express-validator');
 const app = express();
 const port = 3000;
 
-const posts = require('./controllers/posts.js')(app);
-const data = require('./data/reddit-db');
+
 
 // set up handlebars
 app.engine('.hbs', exprHBS({
@@ -26,6 +25,10 @@ app.use(exprValid());
 // // use method override - with POST having ?_method=DELETE or ?_method=PUT
 // app.use(express.static('public'));
 // app.use(methodOverride('_method'));
+
+// require other files
+const posts = require('./controllers/posts.js')(app);
+const data = require('./data/reddit-db.js');
 
 app.get('/', (req, res) => {
 	res.render('home')
