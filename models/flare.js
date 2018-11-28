@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const PostSchema = new Schema({
+const FlareSchema = new Schema({
 	title: { type: String, required: true },
 	subflame: { type: String, required: true }, // you can choose your subreddit
 	synopsis: { type: String, required: true }, // synopsis implies a short body text
@@ -9,16 +9,16 @@ const PostSchema = new Schema({
 	updation: { type: Date }  // updation is like creation
 });
 
-PostSchema.pre("save", function (next) {
+FlareSchema.pre("save", function (next) {
 	// SET createdAt AND updatedAt
 	const now = new Date();
-	this.updatedAt = now;
+	this.updation = now;
 
 	if (!this.createdAt) {
-		this.createdAt = now;
+		this.creation = now;
 	}
 
 	next();
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Flare", FlareSchema);
