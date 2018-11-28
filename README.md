@@ -37,7 +37,8 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	1. [ ] `create` *Actionably* create a post
 		1. [X] Make create posts route and check that form data is sending to new route
 		1. [X] Add Post model with mongoose
-		1. [ ] Confirm posts are saving to database
+		1. [X] Confirm posts are saving to database
+		1. [ ] Error Handling for missing fields
 	1. [ ] `show` *View* a single post in detail
 	1. [ ] `edit` *View* post update-content page
 	1. [ ] `update` *Actionably* update a post
