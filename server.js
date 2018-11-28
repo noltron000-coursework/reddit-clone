@@ -28,6 +28,7 @@ app.use(exprValid());
 const flares = require('./controllers/flares.js')(app);
 const data = require('./data/flamewarz-db.js');
 
+// setting up basic routes
 app.get('/', (req, res) => {
 	res.render('home')
 })
