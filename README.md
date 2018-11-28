@@ -15,13 +15,13 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- Robo 3T
 
 ## To Do:
-1. [X] Start Templating
+1. [ ] Start Templating
 	1. [X] Add & connect Handlebars
-	1. [ ] Add Navbar
-		- Add a logo that links to home
-		- Add an h1 that links to home
-		- Add a CTA button that links to new-post
-		- Recolor the theme to match FlameWarz' style
+	1. [X] Add Navbar
+		- [X] Add a logo that links to home
+		- [X] Add an h1 that links to home
+		- [X] Add a CTA button that links to new-post
+	1. [ ]Recolor the theme to match FlameWarz' style
 1. [ ] Complete `CRUD` of Subreddits
 	1. [ ] `index` *View* a list of all subreddits
 	1. [ ] `new` *View* subreddit creation page
@@ -32,14 +32,16 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	1. [ ] `destroy` *Actionably* delete a subreddit
 1. [ ] Complete `CRUD` of Posts
 	1. [ ] `index` *View* a list of all posts (on current `show` subreddit)
+		- [ ] Make the root route (/) go to the posts#index route render a posts-index template
+		- [ ] Style the template and loop over the posts object
 	1. [X] `new` *View* post creation page
-		1. [X] Make a posts#new route (/posts/new) and template (posts-new.hbs)
-		1. [X] Add form to posts-new template
+		- [X] Make a posts#new route (/posts/new) and template (posts-new.hbs)
+		- [X] Add form to posts-new template
 	1. [ ] `create` *Actionably* create a post
-		1. [X] Make create posts route and check that form data is sending to new route
-		1. [X] Add Post model with mongoose
-		1. [X] Confirm posts are saving to database
-		1. [ ] Error Handling for missing fields
+		- [X] Make create posts route and check that form data is sending to new route
+		- [X] Add Post model with mongoose
+		- [X] Confirm posts are saving to database
+		- [ ] Error Handling for missing fields
 	1. [ ] `show` *View* a single post in detail
 	1. [ ] `edit` *View* post update-content page
 	1. [ ] `update` *Actionably* update a post
