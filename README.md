@@ -21,6 +21,7 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- Add a logo that links to home
 		- Add an h1 that links to home
 		- Add a CTA button that links to new-post
+		- Recolor the theme to match FlameWarz' style
 1. [ ] Complete `CRUD` of Subreddits
 	1. [ ] `index` *View* a list of all subreddits
 	1. [ ] `new` *View* subreddit creation page
