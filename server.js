@@ -25,8 +25,8 @@ app.use(exprValid());
 // app.use(methodOverride('_method'));
 
 // require other files
-const posts = require('./controllers/posts.js')(app);
-const data = require('./data/reddit-db.js');
+const flares = require('./controllers/flares.js')(app);
+const data = require('./data/flamewarz-db.js');
 
 app.get('/', (req, res) => {
 	res.render('home')
