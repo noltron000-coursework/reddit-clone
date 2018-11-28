@@ -1,18 +1,45 @@
 const Post = require('../models/flare');
 
 module.exports = (app) => {
-	// CREATE
+	// INDEX all flares
+	app.get('/flares', (req, res) => {
+		res.render('flares-index')
+	})
+
+	// NEW flares form
+	app.get('/flares/new', (req, res) => {
+		res.render('flares-new')
+	})
+
+	// CREATE flares
 	app.post('/flares/new', (req, res) => {
-		// INSTANTIATE INSTANCE OF POST MODEL
+		// instantiate instance of post model
 		const post = new Post(req.body);
-		// SAVE INSTANCE OF POST MODEL TO DB
+		// save instance of post model to db
 		console.log(req.body);
 		post.save((err, post) => {
-			// REDIRECT TO THE ROOT
+			// redirect to the index
 			console.log(post);
 			console.log(err);
-
-			return res.redirect(`/`);
+			return res.redirect(`/flares`);
 		});
 	});
+
+	// SHOW single flare
+	app.get('/flares/:id', (req, res) => {
+		res.render('flares-show')
+	})
+
+	// EDIT flare form
+	app.get('/flares/:id', (req, res) => {
+		res.render('flares-edit')
+	})
+
+	// UPDATE flare
+	app.get('/flares/:id', (req, res) => {
+	})
+
+	// DELETE flare
+	app.get('/flares/:id', (req, res) => {
+	})
 };

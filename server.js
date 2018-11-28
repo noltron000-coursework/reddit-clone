@@ -33,8 +33,4 @@ app.get('/', (req, res) => {
 	res.render('home')
 })
 
-app.get('/flares/new', (req, res) => {
-	res.render('flares-new')
-})
-
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
