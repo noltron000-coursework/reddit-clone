@@ -44,6 +44,8 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Confirm posts are saving to database
 		- [ ] Error Handling for missing fields
 	- [ ] `show` *View* a single post in detail
+		- [ ] Make route to `posts#show` route `/posts/:id`
+		- [ ] Style the template and display the post object
 	- [ ] `edit` *View* post update-content page
 	- [ ] `update` *Actionably* update a post
 	- [ ] `destroy` *Actionably* delete a post
