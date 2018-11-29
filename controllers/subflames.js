@@ -27,7 +27,7 @@ module.exports = (app) => {
 			// redirect to the index
 			console.log(subflame);
 			console.log(err);
-			return res.redirect('/subflames');
+			return res.redirect('/f');
 		});
 	});
 

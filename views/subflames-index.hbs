@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+	<div class="col-sm-8 col-sm-offset-8">
+		<h2>
+			Subflames
+		</h2>
+		<ul class="pl-0">
+
+			{{#each subflames}}
+			<div class="card mt-3 mb-3">
+				<div class="card-body">
+					<h3 class="card-title">
+						<a href="/f/{{this._id}}">
+							{{this.title}}
+						</a>
+					</h3>
+					<h4 class="card-subtitle mb-2 text-muted">
+						Placeholder Content {{!-- upvotes, downvotes, comments, views, etc --}}
+					</h4>
+					<p class="card-text">{{this.synopsis}}</p>
+				</div>
+			</div>
+			{{/each}}
+
+		</ul>
+	</div>
+</div>
