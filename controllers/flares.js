@@ -19,22 +19,30 @@ module.exports = (app) => {
 
 	// CREATE flares
 	app.post('/flares/new', (req, res) => {
-		// instantiate instance of post model
-		const post = new Post(req.body);
-		// save instance of post model to db
+		// instantiate instance of flare model
+		const flare = new Flare(req.body);
+		// save instance of flare model to db
 		console.log(req.body);
-		post.save((err, post) => {
+		flare.save((err, flare) => {
 			// redirect to the index
-			console.log(post);
+			console.log(flare);
 			console.log(err);
 			return res.redirect(`/flares`);
 		});
 	});
 
 	// SHOW single flare
-	app.get('/flares/:id', (req, res) => {
-		res.render('flares-show')
-	})
+	app.get("/flares/:id", function (req, res) {
+		// LOOK UP THE POST
+		Flare.findById(req.params.id)
+			.then(flare => {
+				res.render("flares-show.hbs", { flare });
+			})
+			.catch(err => {
+				console.log(err.message);
+			});
+	});
+
 
 	// EDIT flare form
 	app.get('/flares/:id', (req, res) => {
