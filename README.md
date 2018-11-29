@@ -22,30 +22,30 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Add an h1 that links to home
 		- [X] Add a CTA button that links to new-post
 	- [ ] Recolor the theme to match FlameWarz' style
-- [ ] Complete `CRUD` of Subreddits
-	- [ ] `index` *View* a list of all subreddits
-	- [ ] `new` *View* subreddit creation page
-	- [ ] `create` *Actionably* create a subreddit
-	- [ ] `show` *View* a single subreddit in detail
-	- [ ] `edit` *View* subreddit update-content page
-	- [ ] `update` *Actionably* update a subreddit
-	- [ ] `destroy` *Actionably* delete a subreddit
-- [ ] Complete `CRUD` of Posts
-	- [ ] `index` *View* a list of all posts (on current `show` subreddit)
+- [ ] Complete `CRUD` of Subflames
+	- [ ] `index` *View* a list of all subflames
+	- [ ] `new` *View* subflame creation page
+	- [ ] `create` *Actionably* create a subflame
+	- [ ] `show` *View* a single subflame in detail
+	- [ ] `edit` *View* subflame update-content page
+	- [ ] `update` *Actionably* update a subflame
+	- [ ] `destroy` *Actionably* delete a subflame
+- [ ] Complete `CRUD` of Flares
+	- [ ] `index` *View* a list of all flares (on current `show` subflame)
 		- [X] Make the index route @ `/flares` go to the `flares-index` route
 		- [X] Render a flares-index template @ `/flares`
-		- [X] Loop over the posts object
+		- [X] Loop over the flares object
 		- [ ] Style the template
 	- [X] `new` *View* post creation page
-		- [X] Make a posts#new route (/posts/new) and template (posts-new.hbs)
-		- [X] Add form to posts-new template
+		- [X] Make a flares#new route (/flares/new) and template (flares-new.hbs)
+		- [X] Add form to flares-new template
 	- [ ] `create` *Actionably* create a post
-		- [X] Make create posts route and check that form data is sending to new route
+		- [X] Make create flares route and check that form data is sending to new route
 		- [X] Add Post model with mongoose
-		- [X] Confirm posts are saving to database
+		- [X] Confirm flares are saving to database
 		- [ ] Error Handling for missing fields
 	- [ ] `show` *View* a single post in detail
-		- [ ] Make route to `posts#show` route `/posts/:id`
+		- [ ] Make route to `flares#show` route `/flares/:id`
 		- [ ] display the post object
 		- [ ] Style the template
 	- [ ] `edit` *View* post update-content page
@@ -59,19 +59,19 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [ ] `edit` *View* comment update-content box (on current `show` post)
 	- [ ] `update` *Actionably* update a comment (on current `show` post)
 	- [ ] `destroy` *Actionably* delete a comment (on current `show` post)
-- [ ] Connect posts and subreddits
-	- Each subreddit has one parent document
-	- Each subreddit has many posts
-	- Each post has one subreddit
+- [ ] Connect flares and subflames
+	- Each subflame has one parent document
+	- Each subflame has many flares
+	- Each post has one subflame
 	- Each post has many comments
 	- Each comment has one post
 	- Each comment has many comments. (**∞ stretch goal**)
 - [ ] Sign Up & Log In
 	- Need more information on Sign Up & Log In
-- [ ] Associate posts, comments, and votes with their author
+- [ ] Associate flares, comments, and votes with their author
 	- Each author has many comments
 	- Each comment has one author
-	- Each author has many posts
+	- Each author has many flares
 	- Each post has one author
 - [ ] `update` Vote a post up or down
 - [ ] `update` Vote a comment up or down
