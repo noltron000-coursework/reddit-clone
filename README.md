@@ -20,14 +20,15 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [X] Add Navbar
 		- [X] Add a logo that links to home
 		- [X] Add an h1 that links to home
-		- [X] Add a CTA button that links to new-post
+		- [X] Add a CTA button that links to new-flare
 	- [ ] Recolor the theme to match FlameWarz' style
 - [ ] Complete `CRUD` of SubFlames
 	- [ ] `index` *View* a list of all subflames
-			- [ ] Navigate to view all the posts of the same subreddit
+			- [ ] Navigate to view all the flares of the same subreddit
 	- [ ] `new` *View* subflame creation page
 	- [ ] `create` *Actionably* create a subflame
-		- [ ] Add a subreddit attribute to our post resource
+		- [ ] Make its ID a hyphen-deliminated string based on its title
+		- [ ] Add a subreddit attribute to our flare resource
 	- [ ] `show` *View* a single subflame in detail
 	- [ ] `edit` *View* subflame update-content page
 	- [ ] `update` *Actionably* update a subflame
@@ -38,35 +39,39 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Render a flares-index template @ `/flares`
 		- [X] Loop over the flares object
 		- [ ] Style the template
-	- [X] `new` *View* post creation page
+		- [ ] See what subflame each flare is on
+	- [X] `new` *View* flare creation page
 		- [X] Make a flares#new route (/flares/new) and template (flares-new.hbs)
 		- [X] Add form to flares-new template
-	- [ ] `create` *Actionably* create a post
+		- [ ] See each existing subflame, and choose one/search for one
+		- [ ] If you create a flare from a subflame, it is automatically entered
+	- [ ] `create` *Actionably* create a flare
 		- [X] Make create flares route and check that form data is sending to new route
 		- [X] Add Post model with mongoose
 		- [X] Confirm flares are saving to database
 		- [ ] Error Handling for missing fields
-	- [ ] `show` *View* a single post in detail
+	- [ ] `show` *View* a single flare in detail
 		- [X] Make route to `flares#show` route `/flares/:id`
-		- [X] display the post object
+		- [X] display the flare object
+		- [ ] See & Link the SubFlame
 		- [ ] Style the template
-	- [ ] `edit` *View* post update-content page
-	- [ ] `update` *Actionably* update a post
-	- [ ] `destroy` *Actionably* delete a post
+	- [ ] `edit` *View* flare update-content page
+	- [ ] `update` *Actionably* update a flare
+	- [ ] `destroy` *Actionably* delete a flare
 - [ ] Complete `CRUD` of Comments
-	- [ ] `index` *View* a list of all comments (on current `show` post)
-	- [ ] `new` *View* comment creation box (on current `show` post)
-	- [ ] `create` *Actionably* create a comment (on current `show` post)
+	- [ ] `index` *View* a list of all comments (on current `show` flare)
+	- [ ] `new` *View* comment creation box (on current `show` flare)
+	- [ ] `create` *Actionably* create a comment (on current `show` flare)
 	- [ ] ~~`show` *View* a single comment in detail~~ (**stretch goal**)
-	- [ ] `edit` *View* comment update-content box (on current `show` post)
-	- [ ] `update` *Actionably* update a comment (on current `show` post)
-	- [ ] `destroy` *Actionably* delete a comment (on current `show` post)
+	- [ ] `edit` *View* comment update-content box (on current `show` flare)
+	- [ ] `update` *Actionably* update a comment (on current `show` flare)
+	- [ ] `destroy` *Actionably* delete a comment (on current `show` flare)
 - [ ] Connect flares and subflames
 	- Each subflame has one parent document
 	- Each subflame has many flares
-	- Each post has one subflame
-	- Each post has many comments
-	- Each comment has one post
+	- Each flare has one subflame
+	- Each flare has many comments
+	- Each comment has one flare
 	- Each comment has many comments. (**∞ stretch goal**)
 - [ ] Sign Up & Log In
 	- Need more information on Sign Up & Log In
@@ -74,7 +79,7 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- Each author has many comments
 	- Each comment has one author
 	- Each author has many flares
-	- Each post has one author
-- [ ] `update` Vote a post up or down
+	- Each flare has one author
+- [ ] `update` Vote a flare up or down
 - [ ] `update` Vote a comment up or down
 - [ ] Search Functionality

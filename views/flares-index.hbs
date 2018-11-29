@@ -1,22 +1,35 @@
 <div class="row justify-content-center">
-	<div class="col-sm-8 col-sm-offset-8">
+	<div class="col-sm-10 col-sm-offset-1">
 		<h2>
 			Flares Index
 		</h2>
+
 		<ul class="pl-0">
 
 			{{#each flares}}
 			<div class="card mt-3 mb-3">
 				<div class="card-body">
-					<h5 class="card-title">
+
+					<h3 class="card-title">
 						<a href="/flares/{{this._id}}">
 							{{this.title}}
 						</a>
-					</h5>
-					<h6 class="card-subtitle mb-2 text-muted">
-						Placeholder Content {{!-- upvotes, downvotes, comments, views, etc --}}
-					</h6>
-					<p class="card-text">{{this.synopsis}}</p>
+					</h3>
+
+					<h4 class="card-subtitle text-muted">
+						<a href="{{this.subflame}}" class="text-muted">
+							{{this.subflame}}
+						</a>
+					</h4>
+
+					<p class="card-text lead">
+						17 comments - 1,235 views - 01/01/19
+					</p>
+
+					<p class="card-text">
+						{{this.synopsis}}
+					</p>
+
 				</div>
 			</div>
 			{{/each}}
