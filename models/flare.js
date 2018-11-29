@@ -2,11 +2,24 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const FlareSchema = new Schema({
-	title: { type: String, required: true },
-	subflame: { type: String }, // you can choose your subreddit
-	synopsis: { type: String, required: true }, // synopsis implies a short body text
-	creation: { type: Date }, // when the flare was originally created
-	updation: { type: Date }  // updation is like creation
+	title: { // title of post/flare
+		type: String,
+		required: true
+	},
+	subflame: { // you can choose your subreddit
+		type: String,
+		required: true
+	},
+	synopsis: { // synopsis implies a short body text
+		type: String,
+		required: true
+	},
+	creation: { // when the flare was originally created
+		type: Date
+	},
+	updation: { // updation is like creation
+		type: Date
+	}
 });
 
 FlareSchema.pre("save", (next) => {

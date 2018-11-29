@@ -1,21 +1,23 @@
-<div class="row">
-	<div class="col-sm-6 col-sm-offset-3">
-		<h2><a href="{{flare.url}}">{{flare.title}}</a></h2>
-		<p>{{flare.synopsis}}</p>
-	</div>
-</div>
-
-
 <div class="card mt-3 mb-3">
 	<div class="card-body">
 		<h2 class="card-title">
-			<a href="/flares/{{flare._id}}">
-				{{flare.title}}
-			</a>
+			{{flare.title}}
 		</h2>
-		<h3 class="card-subtitle mb-2 text-muted">
-			Placeholder Content {{!-- upvotes, downvotes, comments, views, etc --}}
+		<h3 class="card-subtitle">
+			Subflame:
+			<a href="{{flare.subflame}}" class="text-right">
+				{{flare.subflame}}
+			</a>
 		</h3>
-		<p class="card-text">{{this.synopsis}}</p>
+		<p class="card-text text-muted lead">
+			Placeholder - views, upvotes, downvotes, date posted, date updated
+		</p>
+		<p class="card-text">
+			{{flare.synopsis}}
+		</p>
+		<hr />
+		<h4>
+			Comments
+		</h4>
 	</div>
 </div>
