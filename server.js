@@ -25,6 +25,7 @@ app.use(exprValid());
 // app.use(methodOverride('_method'));
 
 // require other files
+const subflames = require('./controllers/subflames.js')(app);
 const flares = require('./controllers/flares.js')(app);
 const data = require('./data/flamewarz-db.js');
 

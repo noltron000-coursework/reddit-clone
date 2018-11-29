@@ -22,7 +22,7 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Add an h1 that links to home
 		- [X] Add a CTA button that links to new-post
 	- [ ] Recolor the theme to match FlameWarz' style
-- [ ] Complete `CRUD` of Subflames
+- [ ] Complete `CRUD` of SubFlames
 	- [ ] `index` *View* a list of all subflames
 			- [ ] Navigate to view all the posts of the same subreddit
 	- [ ] `new` *View* subflame creation page

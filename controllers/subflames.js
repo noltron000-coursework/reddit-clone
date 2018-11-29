@@ -1,9 +1,9 @@
-const Subflame = require('../models/subflare');
+const SubFlame = require('../models/subflame');
 
 module.exports = (app) => {
 	// INDEX all subflames
 	app.get('/f', (req, res) => {
-		Subflame.find({})
+		SubFlame.find({})
 			.then(subflames => {
 				res.render('subflames-index', { subflames });
 			})
@@ -20,7 +20,7 @@ module.exports = (app) => {
 	// CREATE subflames
 	app.post('/f/new', (req, res) => {
 		// instantiate instance of subflame model
-		const subflame = new Subflame(req.body);
+		const subflame = new SubFlame(req.body);
 		// save instance of subflame model to db
 		console.log(req.body);
 		subflame.save((err, subflame) => {
@@ -34,10 +34,13 @@ module.exports = (app) => {
 	// SHOW single subflame
 	app.get("/f/:id", function (req, res) {
 		// look up subflame
-		Subflame.findById(req.params.id)
+		SubFlame.findById(req.params.id)
 			.then(subflame => {
 				res.render("subflames-show", { subflame });
 			})
+			// TODO: find all flares referencing this subflame.
+			// TODO: display all of those flares like an index.
+			// Link: https://github.com/MakeSchool-Tutorials/Node-Reddit-Clone/blob/master/P04-Create-Subreddits/content.md#resolving-the-nsubreddit-route
 			.catch(err => {
 				console.log(err.message);
 			});
