@@ -33,8 +33,9 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 - [ ] Complete `CRUD` of Posts
 	- [ ] `index` *View* a list of all posts (on current `show` subreddit)
 		- [X] Make the index route @ `/flares` go to the `flares-index` route
-		- [ ] Render a flares-index template @ `/flares`
-		- [ ] Style the template and loop over the posts object
+		- [X] Render a flares-index template @ `/flares`
+		- [X] Loop over the posts object
+		- [ ] Style the template
 	- [X] `new` *View* post creation page
 		- [X] Make a posts#new route (/posts/new) and template (posts-new.hbs)
 		- [X] Add form to posts-new template
@@ -45,7 +46,8 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- [ ] Error Handling for missing fields
 	- [ ] `show` *View* a single post in detail
 		- [ ] Make route to `posts#show` route `/posts/:id`
-		- [ ] Style the template and display the post object
+		- [ ] display the post object
+		- [ ] Style the template
 	- [ ] `edit` *View* post update-content page
 	- [ ] `update` *Actionably* update a post
 	- [ ] `destroy` *Actionably* delete a post

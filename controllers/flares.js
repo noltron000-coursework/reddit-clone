@@ -1,9 +1,15 @@
-const Post = require('../models/flare');
+const Flare = require('../models/flare');
 
 module.exports = (app) => {
 	// INDEX all flares
 	app.get('/flares', (req, res) => {
-		res.render('flares-index')
+		Flare.find({})
+			.then(flares => {
+				res.render('flares-index', { flares });
+			})
+			.catch(err => {
+				console.log(err.message);
+			});
 	})
 
 	// NEW flares form
