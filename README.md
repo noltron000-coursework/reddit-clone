@@ -24,8 +24,10 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [ ] Recolor the theme to match FlameWarz' style
 - [ ] Complete `CRUD` of Subflames
 	- [ ] `index` *View* a list of all subflames
+			- [ ] Navigate to view all the posts of the same subreddit
 	- [ ] `new` *View* subflame creation page
 	- [ ] `create` *Actionably* create a subflame
+		- [ ] Add a subreddit attribute to our post resource
 	- [ ] `show` *View* a single subflame in detail
 	- [ ] `edit` *View* subflame update-content page
 	- [ ] `update` *Actionably* update a subflame
@@ -45,8 +47,8 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Confirm flares are saving to database
 		- [ ] Error Handling for missing fields
 	- [ ] `show` *View* a single post in detail
-		- [ ] Make route to `flares#show` route `/flares/:id`
-		- [ ] display the post object
+		- [X] Make route to `flares#show` route `/flares/:id`
+		- [X] display the post object
 		- [ ] Style the template
 	- [ ] `edit` *View* post update-content page
 	- [ ] `update` *Actionably* update a post
