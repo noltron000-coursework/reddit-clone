@@ -4,7 +4,7 @@ const bodyParse = require('body-parser');
 const exprValid = require('express-validator');
 
 const app = express();
-const port = 3000;
+const port = 8000;
 
 // set up handlebars
 app.engine('.hbs', exprHBS({
@@ -34,4 +34,6 @@ app.get('/', (req, res) => {
 	res.render('home')
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => {
+	console.log(`Example app listening on port ${port}!`)
+})
