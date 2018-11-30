@@ -1,4 +1,6 @@
 const SubFlame = require('../models/subflame');
+const Flare = require('../models/flare');
+
 
 module.exports = (app) => {
 	// INDEX all subflames
@@ -38,7 +40,13 @@ module.exports = (app) => {
 		// look up subflame
 		SubFlame.findById(req.params.id)
 			.then(subflame => {
-				res.render("subflames-show", { subflame });
+				Flare.find({ subflame: req.params.id })
+					.then(flare => {
+						res.render("subflames-show", {
+							subflame: subflame,
+							flare: flare
+						});
+					});
 			})
 			// TODO: find all flares referencing this subflame.
 			// TODO: display all of those flares like an index.
