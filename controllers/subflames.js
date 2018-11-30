@@ -1,7 +1,6 @@
 const SubFlame = require('../models/subflame');
 const Flare = require('../models/flare');
 
-
 module.exports = (app) => {
 	// INDEX all subflames
 	app.get('/f', (req, res) => {

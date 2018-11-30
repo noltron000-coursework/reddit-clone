@@ -1,3 +1,4 @@
+const SubFlame = require('../models/subflame');
 const Flare = require('../models/flare');
 
 module.exports = (app) => {
@@ -10,12 +11,15 @@ module.exports = (app) => {
 			.catch(err => {
 				console.log(err.message);
 			});
-	})
+	});
 
 	// NEW flares form
 	app.get('/flares/new', (req, res) => {
-		res.render('flares-new')
-	})
+		SubFlame.find({})
+			.then(subflames => {
+				res.render('flares-new', { subflames });
+			});
+	});
 
 	// CREATE flares
 	app.post('/flares/new', (req, res) => {
@@ -27,7 +31,7 @@ module.exports = (app) => {
 			// redirect to the index
 			console.log(flare);
 			console.log(err);
-			return res.redirect(`/flares`);
+			return res.redirect('/flares');
 		});
 	});
 
