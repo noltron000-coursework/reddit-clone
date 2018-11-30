@@ -25,11 +25,11 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 - [ ] Complete `CRUD` of SubFlames
 	- [X] `index` *View* a list of all subflames
 		- [X] Navigate to view all the flares of the same subflame
-	- [ ] `new` *View* subflame creation page
+	- [X] `new` *View* subflame creation page
 	- [ ] `create` *Actionably* create a subflame
 		- [X] Add a subflame attribute to our flare resource
 		- [ ] Make its ID a hyphen-deliminated string based on its title
-	- [ ] `show` *View* a single subflame in detail
+	- [X] `show` *View* a single subflame in detail
 	- [ ] `edit` *View* subflame update-content page
 	- [ ] `update` *Actionably* update a subflame
 	- [ ] `destroy` *Actionably* delete a subflame
@@ -54,7 +54,7 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [ ] `show` *View* a single flare in detail
 		- [X] Make route to `flares#show` route `/flares/:id`
 		- [X] display the flare object
-		- [ ] See & Link the SubFlame
+		- [X] See & Link the SubFlame
 		- [ ] Style the template
 	- [ ] `edit` *View* flare update-content page
 	- [ ] `update` *Actionably* update a flare
