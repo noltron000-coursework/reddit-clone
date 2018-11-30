@@ -23,12 +23,12 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Add a CTA button that links to new-flare
 	- [ ] Recolor the theme to match FlameWarz' style
 - [ ] Complete `CRUD` of SubFlames
-	- [ ] `index` *View* a list of all subflames
-			- [ ] Navigate to view all the flares of the same subreddit
+	- [X] `index` *View* a list of all subflames
+		- [X] Navigate to view all the flares of the same subflame
 	- [ ] `new` *View* subflame creation page
 	- [ ] `create` *Actionably* create a subflame
+		- [X] Add a subflame attribute to our flare resource
 		- [ ] Make its ID a hyphen-deliminated string based on its title
-		- [ ] Add a subreddit attribute to our flare resource
 	- [ ] `show` *View* a single subflame in detail
 	- [ ] `edit` *View* subflame update-content page
 	- [ ] `update` *Actionably* update a subflame
@@ -38,12 +38,13 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Make the index route @ `/flares` go to the `flares-index` route
 		- [X] Render a flares-index template @ `/flares`
 		- [X] Loop over the flares object
+		- [X] See what subflame each flare is on
 		- [ ] Style the template
-		- [ ] See what subflame each flare is on
 	- [X] `new` *View* flare creation page
 		- [X] Make a flares#new route (/flares/new) and template (flares-new.hbs)
 		- [X] Add form to flares-new template
-		- [ ] See each existing subflame, and choose one/search for one
+		- [X] See each existing subflame, and choose one
+		- [ ] Able to search for a subflame
 		- [ ] If you create a flare from a subflame, it is automatically entered
 	- [ ] `create` *Actionably* create a flare
 		- [X] Make create flares route and check that form data is sending to new route
