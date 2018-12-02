@@ -27,6 +27,7 @@ app.use(exprValid());
 // require other files
 const subflames = require('./controllers/subflames.js')(app);
 const flares = require('./controllers/flares.js')(app);
+const embers = require('./controllers/flares.js')(app);
 const data = require('./data/flamewarz-db.js');
 
 // setting up basic routes
