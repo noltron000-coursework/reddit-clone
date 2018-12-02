@@ -32,10 +32,8 @@ module.exports = (app) => {
 		});
 	});
 
-
-	/* PRIMARY TODO */
 	// SHOW single subflame
-	app.get("/f/:id", function (req, res) {
+	app.get("/f/:id", (req, res) => {
 		// look up subflame
 		SubFlame.findById(req.params.id)
 			.then(subflame => {
@@ -47,14 +45,10 @@ module.exports = (app) => {
 						});
 					});
 			})
-			// TODO: find all flares referencing this subflame.
-			// TODO: display all of those flares like an index.
-			// Link: https://github.com/MakeSchool-Tutorials/Node-Reddit-Clone/blob/master/P04-Create-Subreddits/content.md#resolving-the-nsubreddit-route
 			.catch(err => {
 				console.log(err.message);
 			});
 	});
-
 
 	// EDIT subflame form
 	app.get('/f/:id', (req, res) => {
