@@ -6,7 +6,9 @@ module.exports = (app) => {
 	app.get('/f', (req, res) => {
 		SubFlame.find({})
 			.then(subflames => {
-				res.render('subflames-index', { subflames });
+				res.render('subflames-index', {
+					subflames
+				});
 			})
 			.catch(err => {
 				console.log(err.message);
@@ -24,12 +26,12 @@ module.exports = (app) => {
 		const subflame = new SubFlame(req.body);
 		// save instance of subflame model to db
 		console.log(req.body);
-		subflame.save((err, subflame) => {
-			// redirect to the index
-			console.log(subflame);
-			console.log(err);
-			return res.redirect('/f');
-		});
+		subflame
+			.save((err, subflame) => {
+				console.log(err);
+				console.log(subflame);
+				res.redirect('/f');
+			});
 	});
 
 	// SHOW single subflame

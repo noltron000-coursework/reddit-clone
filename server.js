@@ -15,7 +15,9 @@ app.set('view engine', 'hbs');
 
 // use body parser
 app.use(bodyParse.json());
-app.use(bodyParse.urlencoded({ extended: false }));
+app.use(bodyParse.urlencoded({
+	extended: false
+}));
 
 // use validator - adding after parser init!
 app.use(exprValid());
@@ -27,7 +29,7 @@ app.use(exprValid());
 // require other files
 const subflames = require('./controllers/subflames.js')(app);
 const flares = require('./controllers/flares.js')(app);
-const embers = require('./controllers/flares.js')(app);
+const embers = require('./controllers/embers.js')(app);
 const data = require('./data/flamewarz-db.js');
 
 // setting up basic routes

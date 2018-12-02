@@ -26,13 +26,12 @@ module.exports = (app) => {
 		// instantiate instance of flare model
 		const flare = new Flare(req.body);
 		// save instance of flare model to db
-		console.log(req.body);
 		flare.save((err, flare) => {
-			// redirect to the index
-			console.log(flare);
+			// redirect to flares index
 			console.log(err);
-			return res.redirect('/flares');
-		});
+			console.log(flare);
+			res.redirect('/flares');
+		})
 	});
 
 	// SHOW single flare
