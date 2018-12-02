@@ -59,28 +59,28 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [ ] `edit` *View* flare update-content page
 	- [ ] `update` *Actionably* update a flare
 	- [ ] `destroy` *Actionably* delete a flare
-- [ ] Complete `CRUD` of Comments
-	- [ ] `index` *View* a list of all comments (on current `show` flare)
-	- [ ] `new` *View* comment creation box (on current `show` flare)
-	- [ ] `create` *Actionably* create a comment (on current `show` flare)
-	- [ ] ~~`show` *View* a single comment in detail~~ (**stretch goal**)
-	- [ ] `edit` *View* comment update-content box (on current `show` flare)
-	- [ ] `update` *Actionably* update a comment (on current `show` flare)
-	- [ ] `destroy` *Actionably* delete a comment (on current `show` flare)
-- [ ] Connect flares and subflames
-	- Each subflame has one parent document
-	- Each subflame has many flares
-	- Each flare has one subflame
-	- Each flare has many comments
-	- Each comment has one flare
-	- Each comment has many comments. (**∞ stretch goal**)
+- [ ] Complete `CRUD` of Embers
+	- [X] `index` *View* a list of all embers (on current `show` flare)
+	- [X] `new` *View* ember creation box (on current `show` flare)
+	- [X] `create` *Actionably* create a ember (on current `show` flare)
+	- [ ] ~~`show` *View* a single ember in detail~~ (**stretch goal**)
+	- [ ] `edit` *View* ember update-content box (on current `show` flare)
+	- [ ] `update` *Actionably* update a ember (on current `show` flare)
+	- [ ] `destroy` *Actionably* delete a ember (on current `show` flare)
+- [X] Connect embers, flares, and subflames
+	- [X] Each subflame has one parent document
+	- [X] Each subflame has many flares
+	- [X] Each flare has one subflame
+	- [X] Each flare has many embers
+	- [X] Each ember has one flare
+	- [ ] Each ember has many embers. (**∞ stretch goal**)
 - [ ] Sign Up & Log In
 	- Need more information on Sign Up & Log In
-- [ ] Associate flares, comments, and votes with their author
-	- Each author has many comments
-	- Each comment has one author
-	- Each author has many flares
-	- Each flare has one author
+- [ ] Associate flares, embers, and votes with their author
+	- [ ] Each author has many embers
+	- [ ] Each ember has one author
+	- [ ] Each author has many flares
+	- [ ] Each flare has one author
 - [ ] `update` Vote a flare up or down
-- [ ] `update` Vote a comment up or down
+- [ ] `update` Vote a ember up or down
 - [ ] Search Functionality
