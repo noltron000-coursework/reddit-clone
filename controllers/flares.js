@@ -37,13 +37,15 @@ module.exports = (app) => {
 	// SHOW single flare
 	app.get("/flares/:id", function (req, res) {
 		// LOOK UP THE POST
+
+		// LOOK UP THE POST
 		Flare.findById(req.params.id)
-			.then(flare => {
-				res.render("flares-show.hbs", { flare });
+			.populate('embers')
+			.then((flare) => {
+				res.render('flares-show.hbs', { flare })
+			}).catch((err) => {
+				console.log(err.message)
 			})
-			.catch(err => {
-				console.log(err.message);
-			});
 	});
 
 
