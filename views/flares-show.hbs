@@ -25,8 +25,10 @@
 				<h3>
 					Embers
 				</h3>
-				{{#if flare.embers}}
-				{{else}}
+
+				{{#if flare.embers}}{{#each flare.embers}}
+				<p>{{this}}</p>
+				{{/each}}{{else}}
 				<h4 class="text-muted font-italic">No embers to display.</h4>
 				{{/if}}
 				<form action="/flares/{{flare._id}}/embers" method="post">

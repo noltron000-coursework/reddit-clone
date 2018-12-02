@@ -14,6 +14,11 @@ const FlareSchema = new Schema({
 		type: String,
 		required: true
 	},
+	embers: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Ember'
+	}],
+
 	creation: { // when the flare was originally created
 		type: Date
 	},
