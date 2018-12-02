@@ -15,20 +15,28 @@
 				</h3>
 
 				<p class="card-text lead">
-					17 comments - 1,235 views - 01/01/19
+					17 embers - 1,235 views - 01/01/19
 				</p>
 
 				<p class="card-text">
 					{{flare.synopsis}}
 				</p>
-
-				{{#if flare.comments}}
 				<hr />
 				<h3>
-					Comments
+					Embers
 				</h3>
+				{{#if flare.embers}}
+				{{else}}
+				<h4 class="text-muted font-italic">No embers to display.</h4>
 				{{/if}}
-
+				<form action="/flares/{{flare._id}}/sparks" method="post">
+					<div>
+						<textarea class='form-control' name="content" placeholder="Spark up an ember!"></textarea>
+					</div>
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+				</form>
 			</div>
 		</div>
 
