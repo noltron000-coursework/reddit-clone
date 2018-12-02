@@ -27,9 +27,9 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [X] `index` *View* a list of all subflames
 		- [X] Navigate to view all the flares of the same subflame
 	- [X] `new` *View* subflame creation page
-	- [ ] `create` *Actionably* create a subflame
+	- [X] `create` *Actionably* create a subflame
 		- [X] Add a subflame attribute to our flare resource
-		- [ ] Make its ID a hyphen-deliminated string based on its title
+		- [ ] Make its ID a hyphen-deliminated string based on its title (**stretch goal**)
 	- [X] `show` *View* a single subflame in detail
 	- [ ] `edit` *View* subflame update-content page
 	- [ ] `update` *Actionably* update a subflame
@@ -76,7 +76,14 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [X] Each ember has one flare
 	- [ ] Each ember has many embers. (**∞ stretch goal**)
 - [ ] Sign Up & Log In
-	- Need more information on Sign Up & Log In
+	- [ ] `index` *View* a list of all pyromancers
+	- [X] `new` *View* pyromancer creation page
+	- [ ] `create` *Actionably* create a pyromancer
+		- [ ] use bcrypt.js to encrypt passwords
+	- [ ] `show` *View* a single pyromancer in detail
+	- [ ] `edit` *View* pyromancer update-content page
+	- [ ] `update` *Actionably* update a pyromancer
+	- [ ] `destroy` *Actionably* delete a pyromancer
 - [ ] Associate flares, embers, and votes with their author
 	- [ ] Each author has many embers
 	- [ ] Each ember has one author
