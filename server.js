@@ -1,8 +1,9 @@
 const express = require('express');
 const exprHBS = require('express-handlebars');
-const bodyParse = require('body-parser');
-const exprValid = require('express-validator');
-const bcrypt = require('bcryptjs')
+const exprVld = require('express-validator');
+const bodyPrs = require('body-parser');
+const bCrypt = require('bcryptjs')
+const dotENV = require('dotenv').config();
 
 const app = express();
 const port = 8000;
@@ -15,13 +16,13 @@ app.engine('.hbs', exprHBS({
 app.set('view engine', 'hbs');
 
 // use body parser
-app.use(bodyParse.json());
-app.use(bodyParse.urlencoded({
+app.use(bodyPrs.json());
+app.use(bodyPrs.urlencoded({
 	extended: false
 }));
 
 // use validator - adding after parser init!
-app.use(exprValid());
+app.use(exprVld());
 
 // // use method override - with POST having ?_method=DELETE or ?_method=PUT
 // app.use(express.static('public'));
