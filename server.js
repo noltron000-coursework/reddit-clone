@@ -2,6 +2,7 @@ const express = require('express');
 const exprHBS = require('express-handlebars');
 const bodyParse = require('body-parser');
 const exprValid = require('express-validator');
+const bcrypt = require('bcryptjs')
 
 const app = express();
 const port = 8000;
