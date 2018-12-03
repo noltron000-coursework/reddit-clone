@@ -88,7 +88,6 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [X] `sign out`
 		- [ ] ~~Add a Remember Me checkbox.~~ (**stretch goal**)
 			- ~~What is the difference from when it is checked or not?~~
-	- [ ] `other` Use checkauth on every page -- change display versus logged in status
 - [ ] Associate flares, embers, and votes with their author
 	- [ ] Each author has many embers
 	- [ ] Each ember has one author

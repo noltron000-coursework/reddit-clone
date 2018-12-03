@@ -17,6 +17,7 @@ const checkAuth = (req, res, next) => {
 		const decodedToken = jwt.decode(token, { complete: true }) || {};
 		req.pyro = decodedToken.payload;
 	}
+	res.locals.currentPyro = req.pyro;
 	next();
 };
 
@@ -58,8 +59,7 @@ const data = require('./data/flamewarz-db.js');
 
 // setting up basic routes
 app.get('/', (req, res) => {
-	let currentPyro = req.pyro;
-	res.render('home.hbs', { currentPyro })
+	res.render('home.hbs')
 })
 
 app.listen(port, () => {
