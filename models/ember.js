@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const EmberSchema = new Schema({
 	content: {
-		type: String, required: true
+		type: String,
+		required: true
 	},
 	author: {
 		type: Schema.Types.ObjectId,

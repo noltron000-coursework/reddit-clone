@@ -9,6 +9,7 @@ module.exports = (app) => {
 	app.post('/flares/:flareId/embers', (req, res) => {
 		// INSTANTIATE INSTANCE OF MODEL
 		const ember = new Ember(req.body);
+		ember.author = req.pyro._id;
 		// SAVE INSTANCE OF EMBER MODEL TO DB
 		ember
 			.save()
