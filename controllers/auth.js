@@ -13,7 +13,7 @@ module.exports = (app) => {
 		const pyro = new Pyro(req.body);
 		pyro
 			.save()
-			.then(pyro => {
+			.then((pyro) => {
 				console.log("PASS 1 - SUCCESS")
 				const token = jwt.sign(
 					{ _id: pyro._id },
