@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const SubFlameSchema = new Schema({
@@ -18,7 +18,7 @@ const SubFlameSchema = new Schema({
 	}
 });
 
-SubFlameSchema.pre("save", (next) => {
+SubFlameSchema.pre('save', (next) => {
 	// SET creation AND updation
 	const now = new Date();
 	this.updation = now;
@@ -50,4 +50,4 @@ SubFlameSchema.pre("save", (next) => {
 // } // slug
 // this.urlFriendlyTitle = newString;
 
-module.exports = mongoose.model("SubFlame", SubFlameSchema);
+module.exports = mongoose.model('SubFlame', SubFlameSchema);

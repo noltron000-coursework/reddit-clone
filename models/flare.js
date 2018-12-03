@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const FlareSchema = new Schema({
@@ -18,7 +18,11 @@ const FlareSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'Ember'
 	}],
-
+	author: {
+		type: Schema.Types.ObjectId,
+		ref: 'Pyro',
+		required: true
+	},
 	creation: { // when the flare was originally created
 		type: Date
 	},
@@ -27,7 +31,7 @@ const FlareSchema = new Schema({
 	}
 });
 
-FlareSchema.pre("save", (next) => {
+FlareSchema.pre('save', (next) => {
 	// SET createdAt AND updatedAt
 	const now = new Date();
 	this.updation = now;
@@ -39,4 +43,4 @@ FlareSchema.pre("save", (next) => {
 	next();
 });
 
-module.exports = mongoose.model("Flare", FlareSchema);
+module.exports = mongoose.model('Flare', FlareSchema);

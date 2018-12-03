@@ -1,33 +1,33 @@
-<div class="row justify-content-center">
-	<div class="col-sm-8 col-sm-offset-2">
+<div class='row justify-content-center'>
+	<div class='col-sm-8 col-sm-offset-2'>
 
-		<form action="/flares/new" method="post">
+		<form action='/flares/new' method='post'>
 
 			<legend>New Flare</legend>
 
-			<div class="form-group">
-				<label for="flare-title">Title</label>
-				<input type="text" name="title" class="form-control" id="flare-title" placeholder="Title">
+			<div class='form-group'>
+				<label for='flare-title'>Title</label>
+				<input type='text' name='title' class='form-control' id='flare-title' placeholder='Title'>
 			</div>
 
-			<div class="form-group">
-				<label for="flare-url">SubFlame</label>
-				<select type="url" name="subflame" class="form-control" id="flare-url" placeholder="https://www.google.com">
-					<option value="https://www.google.com" selected disabled hidden>Choose a Subflame!</option>
-					<option value="5c003fd6e42f984e3f7756bf">test</option>
+			<div class='form-group'>
+				<label for='flare-url'>SubFlame</label>
+				<select type='url' name='subflame' class='form-control' id='flare-url' placeholder='https://www.google.com'>
+					<option value='https://www.google.com' selected disabled hidden>Choose a Subflame!</option>
+					<option value='5c003fd6e42f984e3f7756bf'>test</option>
 					{{#each subflames}}
-					<option value="{{this._id}}">{{this.title}}</option>
+					<option value='{{this._id}}'>{{this.title}}</option>
 					{{/each}}
 				</select>
 			</div>
 
-			<div class=" form-group">
-				<label for="flare-synopsis">Synopsis</label>
-				<textarea name="synopsis" class="form-control" id="flare-synopsis" placeholder="Title"></textarea>
+			<div class=' form-group'>
+				<label for='flare-synopsis'>Synopsis</label>
+				<textarea name='synopsis' class='form-control' id='flare-synopsis' placeholder='Title'></textarea>
 			</div>
 
 			<div class='text-right'>
-				<button type="submit" class="btn btn-primary">Flare Up</button>
+				<button type='submit' class='btn btn-primary'>Flare Up</button>
 			</div>
 
 		</form>

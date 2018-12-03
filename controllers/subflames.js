@@ -35,13 +35,13 @@ module.exports = (app) => {
 	});
 
 	// SHOW single subflame
-	app.get("/f/:id", (req, res) => {
+	app.get('/f/:id', (req, res) => {
 		// look up subflame
 		SubFlame.findById(req.params.id)
 			.then(subflame => {
 				Flare.find({ subflame: req.params.id })
 					.then(flare => {
-						res.render("subflames-show", {
+						res.render('subflames-show', {
 							subflame: subflame,
 							flare: flare
 						});
