@@ -25,22 +25,22 @@ module.exports = (app) => {
 
 	// CREATE flares
 	app.post('/flares/new', (req, res) => {
-		// instantiate instance of flare model
+		// INSTANTIATE INSTANCE OF FLARE MODEL
 		const flare = new Flare(req.body);
 		flare.author = req.pyro._id;
-		// save instance of flare model to db
+		// SAVE INSTANCE OF EMBER MODEL TO DB
 		flare
 			.save()
-			.then(flare => {
-				return Pyro.findById(req.pyro._id);
+			.then((flare) => {
+				return Pyro.findById(flare.author);
 			})
-			.then(pyro => {
+			.then((pyro) => {
 				pyro.flares.unshift(flare);
 				pyro.save();
 				// REDIRECT TO THE NEW POST
 				res.redirect("/flares/" + flare._id);
 			})
-			.catch(err => {
+			.catch((err) => {
 				console.log(err.message);
 			});
 	});

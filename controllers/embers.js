@@ -1,5 +1,6 @@
 const Ember = require('../models/ember');
 const Flare = require('../models/flare');
+const Pyro = require('../models/pyro');
 
 
 module.exports = (app) => {
@@ -8,23 +9,33 @@ module.exports = (app) => {
 	// from accessing this ROUTE or variable URL via Middleware
 	// akin to checkAuth in server.js
 	app.post('/flares/:flareId/embers', (req, res) => {
-		// INSTANTIATE INSTANCE OF MODEL
+		// INSTANTIATE INSTANCE OF EMBER MODEL
 		const ember = new Ember(req.body);
 		ember.author = req.pyro._id;
 		// SAVE INSTANCE OF EMBER MODEL TO DB
 		ember
 			.save()
 			.then((ember) => {
-				// redirect to the index
-				console.log(ember);
 				return Flare.findById(req.params.flareId);
 			})
 			.then((flare) => {
 				flare.embers.unshift(ember);
-				return flare.save();
+				flare.save();
 			})
-			.then((flare) => {
-				res.redirect(`/`);
+			.then((ember) => {
+				console.log("AHAHAH AH AHAH A HAHAH HA")
+				return Pyro.findById(req.pyro._id);
+			})
+			.then((pyro) => {
+				pyro.embers.unshift(ember);
+				pyro.save();
+			})
+			.then((pyro) => {
+				console.log('movethatgearup')
+
+				// REDIRECT TO THE NEW POST
+				console.log('gottem')
+				res.redirect("/");
 			})
 			.catch((err) => {
 				console.log(err);
