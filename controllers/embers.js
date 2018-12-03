@@ -4,8 +4,9 @@ const Flare = require('../models/flare');
 
 module.exports = (app) => {
 	// CREATE EMBER
-	// find a way to prevent unauthorized users
-	// from accessing this ROUTE or variable URL
+	// TODO: find a way to prevent unauthorized users
+	// from accessing this ROUTE or variable URL via Middleware
+	// akin to checkAuth in server.js
 	app.post('/flares/:flareId/embers', (req, res) => {
 		// INSTANTIATE INSTANCE OF MODEL
 		const ember = new Ember(req.body);
