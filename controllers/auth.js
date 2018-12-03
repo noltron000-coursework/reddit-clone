@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const Pyro = require('../models/pyro');
 
 module.exports = (app) => {
@@ -8,18 +9,17 @@ module.exports = (app) => {
 
 	// SIGN UP POST
 	app.post("/signup", (req, res) => {
-		// Create Pyro
-		console.log("got here")
+		// Create Pyro and JWT
 		const pyro = new Pyro(req.body);
-		console.log("got here!")
 		pyro
 			.save()
 			.then(pyro => {
-				console.log('hello')
+				let token = jwt.sign({ _id: pyro._id }, process.env.SECRET, { expiresIn: "60 days" });
 				res.redirect("/");
 			})
 			.catch(err => {
 				console.log(err.message);
+				return res.status(400).send({ err: err });
 			});
 	});
 };
