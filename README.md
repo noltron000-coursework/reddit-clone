@@ -89,13 +89,13 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 		- [ ] ~~Require a password confirmation field.~~ (**stretch goal**)
 		- [ ] ~~Plan out how you would do a 'forget password' process.~~ (**stretch goal**)
 	- [X] `sign out`
-		- [ ] ~~Add a Remember Me checkbox.~~ (**stretch goal**)
+		- [ ] ~~Add a Remember Me checkbox~~ (**stretch goal**)
 			- ~~What is the difference from when it is checked or not?~~
-- [ ] Associate flares, embers, and votes with their author
-	- [ ] Each author has many embers
-	- [ ] Each ember has one author
-	- [ ] Each author has many flares
-	- [ ] Each flare has one author
+- [X] Associate flares, embers, and votes with their author
+	- [X] Each author has many embers
+	- [X] Each ember has one author
+	- [X] Each author has many flares
+	- [X] Each flare has one author
 - [ ] `update` Vote a flare up or down
 - [ ] `update` Vote a ember up or down
 - [ ] Search Functionality
