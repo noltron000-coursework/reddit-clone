@@ -1,5 +1,7 @@
 const SubFlame = require('../models/subflame');
 const Flare = require('../models/flare');
+const Pyro = require('../models/pyro');
+
 
 module.exports = (app) => {
 	// INDEX all flares
@@ -25,19 +27,26 @@ module.exports = (app) => {
 	app.post('/flares/new', (req, res) => {
 		// instantiate instance of flare model
 		const flare = new Flare(req.body);
+		flare.author = req.pyro._id;
 		// save instance of flare model to db
-		flare.save((err, flare) => {
-			// redirect to flares index
-			console.log(err);
-			console.log(flare);
-			res.redirect('/flares');
-		})
+		flare
+			.save()
+			.then(flare => {
+				return Pyro.findById(req.pyro._id);
+			})
+			.then(pyro => {
+				pyro.flares.unshift(flare);
+				pyro.save();
+				// REDIRECT TO THE NEW POST
+				res.redirect("/flares/" + flare._id);
+			})
+			.catch(err => {
+				console.log(err.message);
+			});
 	});
 
 	// SHOW single flare
 	app.get('/flares/:id', function (req, res) {
-		// LOOK UP THE POST
-
 		// LOOK UP THE POST
 		Flare.findById(req.params.id)
 			.populate('embers')
