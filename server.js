@@ -4,15 +4,16 @@ const exprVld = require('express-validator');
 const bodyPrs = require('body-parser');
 const bCrypt = require('bcryptjs')
 const dotENV = require('dotenv').config();
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = 8000;
 
+/* all middleware must appear after express(); is initialized. */
+
 // set up handlebars
-app.engine('.hbs', exprHBS({
-	extname: '.hbs',
-	defaultLayout: 'main'
-}));
+app.engine('.hbs', exprHBS({ extname: '.hbs', defaultLayout: 'main' }));
 app.set('view engine', 'hbs');
 
 // use body parser
@@ -23,6 +24,9 @@ app.use(bodyPrs.urlencoded({
 
 // use validator - adding after parser init!
 app.use(exprVld());
+
+// use cookie parser for JWTs etc
+app.use(cookieParser());
 
 // // use method override - with POST having ?_method=DELETE or ?_method=PUT
 // app.use(express.static('public'));
@@ -37,6 +41,7 @@ const data = require('./data/flamewarz-db.js');
 
 // setting up basic routes
 app.get('/', (req, res) => {
+	console.log(req.cookies);
 	res.render('home')
 })
 
