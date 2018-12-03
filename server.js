@@ -17,7 +17,7 @@ const checkAuth = (req, res, next) => {
 		const decodedToken = jwt.decode(token, { complete: true }) || {};
 		req.pyro = decodedToken.payload;
 	}
-	res.locals.currentPyro = req.pyro;
+	res.locals.authPyro = req.pyro;
 	next();
 };
 
