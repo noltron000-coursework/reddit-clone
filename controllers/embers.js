@@ -23,18 +23,13 @@ module.exports = (app) => {
 				flare.save();
 			})
 			.then((ember) => {
-				console.log("AHAHAH AH AHAH A HAHAH HA")
-				return Pyro.findById(req.pyro._id);
 			})
 			.then((pyro) => {
 				pyro.embers.unshift(ember);
 				pyro.save();
 			})
 			.then((pyro) => {
-				console.log('movethatgearup')
-
 				// REDIRECT TO THE NEW POST
-				console.log('gottem')
 				res.redirect("/");
 			})
 			.catch((err) => {

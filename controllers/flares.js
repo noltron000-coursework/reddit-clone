@@ -57,7 +57,6 @@ module.exports = (app) => {
 			})
 	});
 
-
 	// EDIT flare form
 	app.get('/flares/:id', (req, res) => {
 		res.render('flares-edit')
