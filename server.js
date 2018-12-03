@@ -21,6 +21,24 @@ const checkAuth = (req, res, next) => {
 	next();
 };
 
+const forceNoAuth = (req, res, next) => {
+	if (res.locals.authPyro) {
+		return res
+			.status(401)
+			.send({ error: "access denied" }); // UNAUTHORIZED
+	} else { }
+	next()
+}
+
+const forceAuth = (req, res, next) => {
+	if (!res.locals.authPyro) {
+		return res
+			.status(401)
+			.send({ error: "access denied" }); // UNAUTHORIZED
+	} else { }
+	next()
+}
+
 const app = express();
 const port = 8000;
 
@@ -49,6 +67,9 @@ app.use(cookieParser());
 
 // use checkAuth custom middleware
 app.use(checkAuth);
+app.get(('/login', '/signup'), forceNoAuth)
+app.get(('/flares/new', '/f/new', '/flares/:flareId/embers'), forceAuth)
+
 
 // require other files
 const subflames = require('./controllers/subflames.js')(app);

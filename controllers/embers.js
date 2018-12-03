@@ -3,13 +3,13 @@ const Flare = require('../models/flare');
 
 
 module.exports = (app) => {
-	// CREATE Comment
+	// CREATE EMBER
+	// find a way to prevent unauthorized users
+	// from accessing this ROUTE or variable URL
 	app.post("/flares/:flareId/embers", (req, res) => {
-
 		// INSTANTIATE INSTANCE OF MODEL
 		const ember = new Ember(req.body);
-
-		// SAVE INSTANCE OF Comment MODEL TO DB
+		// SAVE INSTANCE OF EMBER MODEL TO DB
 		ember
 			.save()
 			.then((ember) => {
