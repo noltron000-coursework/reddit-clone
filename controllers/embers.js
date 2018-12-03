@@ -12,6 +12,7 @@ module.exports = (app) => {
 		// INSTANTIATE INSTANCE OF EMBER MODEL
 		const ember = new Ember(req.body);
 		ember.author = req.pyro._id;
+
 		// SAVE INSTANCE OF EMBER MODEL TO DB
 		ember
 			.save()
@@ -33,7 +34,7 @@ module.exports = (app) => {
 			})
 			.then(() => {
 				// REDIRECT TO THE NEW POST
-				res.redirect("/");
+				res.redirect('/flares/' + req.params.flareId);
 			})
 			.catch((err) => {
 				console.log(err);
