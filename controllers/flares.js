@@ -57,15 +57,18 @@ module.exports = (app) => {
 	});
 
 	// EDIT flare form
+	// TODO
 	app.get('/flares/:id', (req, res) => {
 		res.render('flares-edit')
 	})
 
 	// UPDATE flare
+	// TODO
 	app.get('/flares/:id', (req, res) => {
 	})
 
 	// DELETE flare
+	// TODO
 	app.get('/flares/:id', (req, res) => {
 	})
 };

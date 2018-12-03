@@ -6,7 +6,7 @@ const EmberSchema = new Schema({
 		type: String,
 		required: true
 	},
-	embers: {
+	replies: {
 		type: Schema.Types.ObjectId,
 		ref: 'Ember'
 	},
@@ -15,6 +15,11 @@ const EmberSchema = new Schema({
 		ref: 'Pyro',
 		required: true
 	}
+});
+// https://github.com/edwintcloud/Reddit-js/commit/2c6beb6e1e7093ad7a21e5c56763fd393a819
+EmberSchema.pre('find', function (next) {
+	this.populate('replies');
+	next();
 });
 
 module.exports = mongoose.model('Ember', EmberSchema);
