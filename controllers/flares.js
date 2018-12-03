@@ -2,7 +2,6 @@ const SubFlame = require('../models/subflame');
 const Flare = require('../models/flare');
 const Pyro = require('../models/pyro');
 
-
 module.exports = (app) => {
 	// INDEX all flares
 	app.get('/flares', (req, res) => {

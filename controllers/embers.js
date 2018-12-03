@@ -2,7 +2,6 @@ const Ember = require('../models/ember');
 const Flare = require('../models/flare');
 const Pyro = require('../models/pyro');
 
-
 module.exports = (app) => {
 	// CREATE EMBER
 	// TODO: find a way to prevent unauthorized users

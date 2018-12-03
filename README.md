@@ -63,6 +63,7 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 	- [X] `new` *View* ember creation box (on current `show` flare)
 	- [X] `create` *Actionably* create a ember (on current `show` flare)
 	- [ ] ~~`show` *View* a single ember in detail~~ (**stretch goal**)
+		- ~~Can you show one comment in detail?~~
 	- [ ] `edit` *View* ember update-content box (on current `show` flare)
 	- [ ] `update` *Actionably* update a ember (on current `show` flare)
 	- [ ] `destroy` *Actionably* delete a ember (on current `show` flare)
@@ -78,7 +79,9 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 	- [X] `new` *View* pyromancer creation page (*sign up*)
 	- [X] `create` *Actionably* create a pyromancer (*sign up*)
 		- [X] use bcrypt.js to encrypt passwords
-	- [ ] `show` *View* a single pyromancer in detail
+	- [ ] `show` ~~*View* a single pyromancer in detail~~ (**stretch**)
+		- ~~Can you make an author's username a link that displays that users's profile at `/users/:username`?~~
+		- ~~Can you make a /profile route that loads the current user and displays their posts and comments?~~
 	- [ ] `edit` *View* pyromancer update-content page
 	- [ ] `update` *Actionably* update a pyromancer
 	- [ ] `destroy` *Actionably* delete a pyromancer
