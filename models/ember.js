@@ -6,6 +6,10 @@ const EmberSchema = new Schema({
 		type: String,
 		required: true
 	},
+	embers: {
+		type: Schema.Types.ObjectId,
+		ref: 'Ember'
+	},
 	author: {
 		type: Schema.Types.ObjectId,
 		ref: 'Pyro',
