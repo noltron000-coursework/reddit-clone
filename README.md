@@ -35,28 +35,26 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [ ] `update` *Actionably* update a subflame
 	- [ ] `destroy` *Actionably* delete a subflame
 - [ ] Complete `CRUD` of Flares
-	- [ ] `index` *View* a list of all flares (on current `show` subflame)
+	- [X] `index` *View* a list of all flares (on current `show` subflame)
 		- [X] Make the index route @ `/flares` go to the `flares-index` route
 		- [X] Render a flares-index template @ `/flares`
 		- [X] Loop over the flares object
 		- [X] See what subflame each flare is on
-		- [ ] Style the template
 	- [X] `new` *View* flare creation page
 		- [X] Make a flares#new route (/flares/new) and template (flares-new.hbs)
 		- [X] Add form to flares-new template
 		- [X] See each existing subflame, and choose one
-		- [ ] Able to search for a subflame
-		- [ ] If you create a flare from a subflame, it is automatically entered
-	- [ ] `create` *Actionably* create a flare
+		- [ ] ~~Able to search for a subflame~~ (**stretch goal**)
+		- [ ] ~~If you create a flare from a subflame, it is automatically entered~~ (**stretch goal**)
+	- [X] `create` *Actionably* create a flare
 		- [X] Make create flares route and check that form data is sending to new route
 		- [X] Add Post model with mongoose
 		- [X] Confirm flares are saving to database
-		- [ ] Error Handling for missing fields
-	- [ ] `show` *View* a single flare in detail
+		- [ ] ~~Error Handling for missing fields~~ (**stretch goal**)
+	- [X] `show` *View* a single flare in detail
 		- [X] Make route to `flares#show` route `/flares/:id`
 		- [X] display the flare object
 		- [X] See & Link the SubFlame
-		- [ ] Style the template
 	- [ ] `edit` *View* flare update-content page
 	- [ ] `update` *Actionably* update a flare
 	- [ ] `destroy` *Actionably* delete a flare
@@ -74,16 +72,22 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [X] Each flare has one subflame
 	- [X] Each flare has many embers
 	- [X] Each ember has one flare
-	- [ ] Each ember has many embers. (**∞ stretch goal**)
+	- [ ] ~~Each ember has many embers.~~ (**∞ stretch goal**)
 - [ ] Sign Up & Log In
 	- [ ] `index` *View* a list of all pyromancers
-	- [X] `new` *View* pyromancer creation page
-	- [ ] `create` *Actionably* create a pyromancer
-		- [ ] use bcrypt.js to encrypt passwords
+	- [X] `new` *View* pyromancer creation page (*sign up*)
+	- [X] `create` *Actionably* create a pyromancer (*sign up*)
+		- [X] use bcrypt.js to encrypt passwords
 	- [ ] `show` *View* a single pyromancer in detail
 	- [ ] `edit` *View* pyromancer update-content page
 	- [ ] `update` *Actionably* update a pyromancer
 	- [ ] `destroy` *Actionably* delete a pyromancer
+	- [X] `sign in`
+		- [ ] ~~Require a password confirmation field.~~ (**stretch goal**)
+		- [ ] ~~Plan out how you would do a "forget password" process.~~ (**stretch goal**)
+	- [X] `sign out`
+		- [ ] ~~Add a Remember Me checkbox.~~ (**stretch goal**)
+			- ~~What is the difference from when it is checked or not?~~
 - [ ] Associate flares, embers, and votes with their author
 	- [ ] Each author has many embers
 	- [ ] Each ember has one author
