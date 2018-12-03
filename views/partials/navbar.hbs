@@ -13,12 +13,21 @@
 	</a>
 	<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 		<ul class="navbar-nav ml-auto">
+			{{#if authPyro}}
 			<li class="nav-item">
-				<a class="btn" href="/flares/new">Signup / Login</a>
+				<a class="btn" href="/logout">Logout</a>
 			</li>
 			<li class="nav-item">
 				<a class="btn btn-primary" href="/flares/new">Make a Flare</a>
 			</li>
+			{{else}}
+			<li class="nav-item">
+				<a class="btn" href="/login">Login</a>
+			</li>
+			<li class="nav-item">
+				<a class="btn btn-primary" href="/signup">Sign Up</a>
+			</li>
+			{{/if}}
 		</ul>
 	</div>
 </nav>

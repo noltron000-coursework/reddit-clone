@@ -15,7 +15,7 @@ const SubFlameSchema = new Schema({
 	},
 	updation: { // updation is like creation
 		type: Date
-	},
+	}
 });
 
 SubFlameSchema.pre("save", (next) => {
@@ -23,7 +23,7 @@ SubFlameSchema.pre("save", (next) => {
 	const now = new Date();
 	this.updation = now;
 
-	if (!this.createdAt) {
+	if (!this.creation) {
 		this.creation = now;
 	}
 

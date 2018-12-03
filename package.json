@@ -4,7 +4,6 @@
 	"description": "Make School's Reddit clone tutorial Nov.26",
 	"main": "server.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"test": "mocha"
 	},
 	"repository": {
@@ -18,16 +17,22 @@
 	},
 	"homepage": "https://github.com/noltron000/BEW-1-2_reddit-clone#readme",
 	"dependencies": {
+		"bcrypt": "^3.0.2",
+		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.18.3",
+		"cookie-parser": "^1.4.3",
+		"dotenv": "^6.1.0",
 		"express-handlebars": "^3.0.0",
 		"express-validator": "^5.3.0",
 		"handlebars": "^4.0.12",
+		"jsonwebtoken": "^8.4.0",
 		"mongodb": "^3.1.10",
 		"mongoose": "^5.3.14"
 	},
 	"devDependencies": {
 		"chai": "^4.2.0",
 		"chai-http": "^4.2.0",
-		"mocha": "^5.2.0"
+		"mocha": "^5.2.0",
+		"nodemon": "^1.18.7"
 	}
 }
