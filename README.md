@@ -1,7 +1,7 @@
 # BEW-1-2_reddit-clone
 Reddit Clone is a project in Make School's Backend 1-2. By utilizing relationships, a large variety of tasks can be implemented. This can be cloned and transformed into other websites that might use a similar routing system.
 
-See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone-in-node-js">Make School</a>
+See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone-in-node-js'>Make School</a>
 
 ## Technologies Used
 - Node.js
@@ -63,6 +63,7 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [X] `new` *View* ember creation box (on current `show` flare)
 	- [X] `create` *Actionably* create a ember (on current `show` flare)
 	- [ ] ~~`show` *View* a single ember in detail~~ (**stretch goal**)
+		- ~~Can you show one comment in detail?~~
 	- [ ] `edit` *View* ember update-content box (on current `show` flare)
 	- [ ] `update` *Actionably* update a ember (on current `show` flare)
 	- [ ] `destroy` *Actionably* delete a ember (on current `show` flare)
@@ -78,21 +79,23 @@ See the tutorial: <a href="https://www.makeschool.com/academy/track/reddit-clone
 	- [X] `new` *View* pyromancer creation page (*sign up*)
 	- [X] `create` *Actionably* create a pyromancer (*sign up*)
 		- [X] use bcrypt.js to encrypt passwords
-	- [ ] `show` *View* a single pyromancer in detail
+	- [ ] `show` ~~*View* a single pyromancer in detail~~ (**stretch**)
+		- ~~Can you make an author's username a link that displays that users's profile at `/users/:username`?~~
+		- ~~Can you make a /profile route that loads the current user and displays their posts and comments?~~
 	- [ ] `edit` *View* pyromancer update-content page
 	- [ ] `update` *Actionably* update a pyromancer
 	- [ ] `destroy` *Actionably* delete a pyromancer
 	- [X] `sign in`
 		- [ ] ~~Require a password confirmation field.~~ (**stretch goal**)
-		- [ ] ~~Plan out how you would do a "forget password" process.~~ (**stretch goal**)
+		- [ ] ~~Plan out how you would do a 'forget password' process.~~ (**stretch goal**)
 	- [X] `sign out`
-		- [ ] ~~Add a Remember Me checkbox.~~ (**stretch goal**)
+		- [ ] ~~Add a Remember Me checkbox~~ (**stretch goal**)
 			- ~~What is the difference from when it is checked or not?~~
-- [ ] Associate flares, embers, and votes with their author
-	- [ ] Each author has many embers
-	- [ ] Each ember has one author
-	- [ ] Each author has many flares
-	- [ ] Each flare has one author
+- [X] Associate flares, embers, and votes with their author
+	- [X] Each author has many embers
+	- [X] Each ember has one author
+	- [X] Each author has many flares
+	- [X] Each flare has one author
 - [ ] `update` Vote a flare up or down
 - [ ] `update` Vote a ember up or down
 - [ ] Search Functionality

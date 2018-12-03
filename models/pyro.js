@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
 
 
@@ -16,6 +16,14 @@ const PyroSchema = new Schema({
 		type: String,
 		select: false
 	},
+	flares: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Flare'
+	}],
+	embers: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Ember'
+	}],
 	creation: {
 		type: Date
 	},
@@ -25,7 +33,7 @@ const PyroSchema = new Schema({
 });
 
 // Define the callback with a regular function to avoid problems with this
-PyroSchema.pre("save", function (next) {
+PyroSchema.pre('save', function (next) {
 	// SET creation AND updation
 	const now = new Date();
 	this.updation = now;
@@ -36,7 +44,7 @@ PyroSchema.pre("save", function (next) {
 
 	// ENCRYPT PASSWORD
 	const pyro = this;
-	if (!pyro.isModified("password")) {
+	if (!pyro.isModified('password')) {
 		return next();
 	}
 	bcrypt.genSalt(10, (err, salt) => {
@@ -54,4 +62,4 @@ PyroSchema.methods.comparePassword = function (password, done) {
 	});
 };
 
-module.exports = mongoose.model("Pyro", PyroSchema);
+module.exports = mongoose.model('Pyro', PyroSchema);

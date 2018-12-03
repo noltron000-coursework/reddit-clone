@@ -8,9 +8,9 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
 const checkAuth = (req, res, next) => {
-	console.log("Checking authentication:");
+	console.log('Checking authentication:');
 	console.log(req.cookies);
-	if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
+	if (typeof req.cookies.nToken === 'undefined' || req.cookies.nToken === null) {
 		req.pyro = null;
 	} else {
 		const token = req.cookies.nToken;
@@ -25,7 +25,7 @@ const forceNoAuth = (req, res, next) => {
 	if (res.locals.authPyro) {
 		return res
 			.status(401)
-			.send({ error: "access denied" }); // UNAUTHORIZED
+			.send({ error: 'access denied' }); // UNAUTHORIZED
 	} else { }
 	next()
 }
@@ -34,7 +34,7 @@ const forceAuth = (req, res, next) => {
 	if (!res.locals.authPyro) {
 		return res
 			.status(401)
-			.send({ error: "access denied" }); // UNAUTHORIZED
+			.send({ error: 'access denied' }); // UNAUTHORIZED
 	} else { }
 	next()
 }

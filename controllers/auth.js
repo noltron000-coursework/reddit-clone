@@ -3,12 +3,12 @@ const Pyro = require('../models/pyro');
 
 module.exports = (app) => {
 	// SIGN UP FORM
-	app.get("/signup", (req, res) => {
-		res.render("pyros-signup.hbs");
+	app.get('/signup', (req, res) => {
+		res.render('pyros-signup.hbs');
 	});
 
 	// SIGN UP POST
-	app.post("/signup", (req, res) => {
+	app.post('/signup', (req, res) => {
 		// Create Pyro and JWT
 		const pyro = new Pyro(req.body);
 		pyro
@@ -17,7 +17,7 @@ module.exports = (app) => {
 				const token = jwt.sign(
 					{ _id: pyro._id },
 					process.env.SECRET,
-					{ expiresIn: "60 days" }
+					{ expiresIn: '60 days' }
 				);
 				res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
 				res.redirect('/');
@@ -34,16 +34,16 @@ module.exports = (app) => {
 	});
 
 	// LOGIN POST
-	app.post("/login", (req, res) => {
+	app.post('/login', (req, res) => {
 		const pyroname = req.body.pyroname;
 		const password = req.body.password;
 		// Find this pyro name
-		Pyro.findOne({ pyroname }, "pyroname password")
+		Pyro.findOne({ pyroname }, 'pyroname password')
 			.then(pyro => {
 				if (!pyro) {
 					// Pyro not found
 					return res.status(401).send({
-						message: "Wrong Pyroname or Password"
+						message: 'Wrong Pyroname or Password'
 					});
 				}
 				// Check the password
@@ -51,7 +51,7 @@ module.exports = (app) => {
 					if (!isMatch) {
 						// Password does not match
 						return res.status(401).send({
-							message: "Wrong Pyroname or Password"
+							message: 'Wrong Pyroname or Password'
 						});
 					}
 					// Create a token
@@ -61,14 +61,14 @@ module.exports = (app) => {
 							pyroname: pyro.pyroname
 						},
 						process.env.SECRET,
-						{ expiresIn: "60 days" }
+						{ expiresIn: '60 days' }
 					);
 					// Set a cookie and redirect to root
-					res.cookie("nToken", token, {
+					res.cookie('nToken', token, {
 						maxAge: 900000,
 						httpOnly: true
 					});
-					res.redirect("/");
+					res.redirect('/');
 				});
 			})
 			.catch(err => {

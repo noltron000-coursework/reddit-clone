@@ -1,9 +1,9 @@
 const Flare = require('../models/flare');
 
 const flare = {
-	title: "flare title",
-	url: "https://www.google.com",
-	summary: "flare summary"
+	title: 'flare title',
+	url: 'https://www.google.com',
+	summary: 'flare summary'
 };
 
 Flare.findOneAndRemove(flare, () => {
@@ -11,8 +11,8 @@ Flare.findOneAndRemove(flare, () => {
 		let flareCount = flares.count;
 
 		chai
-			.request("localhost:3000")
-			.post("/flares/new")
+			.request('localhost:3000')
+			.post('/flares/new')
 			.send(flare)
 			.then(res => {
 				Flare.find((err, flares) => {

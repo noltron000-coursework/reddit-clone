@@ -1,5 +1,6 @@
 const SubFlame = require('../models/subflame');
 const Flare = require('../models/flare');
+const Pyro = require('../models/pyro');
 
 module.exports = (app) => {
 	// INDEX all flares
@@ -23,21 +24,28 @@ module.exports = (app) => {
 
 	// CREATE flares
 	app.post('/flares/new', (req, res) => {
-		// instantiate instance of flare model
+		// INSTANTIATE INSTANCE OF FLARE MODEL
 		const flare = new Flare(req.body);
-		// save instance of flare model to db
-		flare.save((err, flare) => {
-			// redirect to flares index
-			console.log(err);
-			console.log(flare);
-			res.redirect('/flares');
-		})
+		flare.author = req.pyro._id;
+		// SAVE INSTANCE OF EMBER MODEL TO DB
+		flare
+			.save()
+			.then((flare) => {
+				return Pyro.findById(flare.author);
+			})
+			.then((pyro) => {
+				pyro.flares.unshift(flare);
+				pyro.save();
+				// REDIRECT TO THE NEW POST
+				res.redirect("/flares/" + flare._id);
+			})
+			.catch((err) => {
+				console.log(err.message);
+			});
 	});
 
 	// SHOW single flare
-	app.get("/flares/:id", function (req, res) {
-		// LOOK UP THE POST
-
+	app.get('/flares/:id', function (req, res) {
 		// LOOK UP THE POST
 		Flare.findById(req.params.id)
 			.populate('embers')
@@ -47,7 +55,6 @@ module.exports = (app) => {
 				console.log(err.message)
 			})
 	});
-
 
 	// EDIT flare form
 	app.get('/flares/:id', (req, res) => {
