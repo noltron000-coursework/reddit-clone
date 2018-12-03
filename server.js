@@ -7,8 +7,22 @@ const dotENV = require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
+const checkAuth = (req, res, next) => {
+	console.log("Checking authentication:");
+	console.log(req.cookies);
+	if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
+		req.pyro = null;
+	} else {
+		const token = req.cookies.nToken;
+		const decodedToken = jwt.decode(token, { complete: true }) || {};
+		req.pyro = decodedToken.payload;
+	}
+	next();
+};
+
 const app = express();
 const port = 8000;
+
 
 /* all middleware must appear after express(); is initialized. */
 
@@ -32,6 +46,9 @@ app.use(cookieParser());
 // app.use(express.static('public'));
 // app.use(methodOverride('_method'));
 
+// use checkAuth custom middleware
+app.use(checkAuth);
+
 // require other files
 const subflames = require('./controllers/subflames.js')(app);
 const flares = require('./controllers/flares.js')(app);
@@ -41,8 +58,8 @@ const data = require('./data/flamewarz-db.js');
 
 // setting up basic routes
 app.get('/', (req, res) => {
-	console.log(req.cookies);
-	res.render('home')
+	let currentPyro = req.pyro;
+	res.render('home.hbs', { currentPyro })
 })
 
 app.listen(port, () => {
