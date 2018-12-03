@@ -67,8 +67,8 @@ app.use(cookieParser());
 
 // use checkAuth custom middleware
 app.use(checkAuth);
-app.get(('/login', '/signup'), forceNoAuth)
-app.get(('/flares/new', '/f/new', '/flares/:flareId/embers'), forceAuth)
+app.get(('/login', '/signup'), forceNoAuth);
+app.get(('/f/new', '/flares/new', '/flares/:flareId/embers'), forceAuth);
 
 
 // require other files
