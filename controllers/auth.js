@@ -7,13 +7,15 @@ module.exports = (app) => {
 	});
 
 	// SIGN UP POST
-	app.post("/sign-up", (req, res) => {
+	app.post("/signup", (req, res) => {
 		// Create Pyro
+		console.log("got here")
 		const pyro = new Pyro(req.body);
-
+		console.log("got here!")
 		pyro
 			.save()
 			.then(pyro => {
+				console.log('hello')
 				res.redirect("/");
 			})
 			.catch(err => {

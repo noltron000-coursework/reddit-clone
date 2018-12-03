@@ -23,7 +23,7 @@ SubFlameSchema.pre("save", (next) => {
 	const now = new Date();
 	this.updation = now;
 
-	if (!this.createdAt) {
+	if (!this.creation) {
 		this.creation = now;
 	}
 

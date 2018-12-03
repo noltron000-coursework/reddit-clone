@@ -5,13 +5,16 @@ const Schema = mongoose.Schema;
 
 const PyroSchema = new Schema({
 	pyroname: {
-		type: String, required: true
+		type: String,
+		required: true
 	},
 	email: {
-		type: String, required: true
+		type: String,
+		required: true
 	},
 	password: {
-		type: String, select: false
+		type: String,
+		select: false
 	},
 	creation: {
 		type: Date
@@ -22,32 +25,30 @@ const PyroSchema = new Schema({
 });
 
 // Define the callback with a regular function to avoid problems with this
-
-PyroSchema.pre("save", (next) => {
+PyroSchema.pre("save", function (next) {
 	// SET creation AND updation
 	const now = new Date();
 	this.updation = now;
 
-	if (!this.createdAt) {
+	if (!this.creation) {
 		this.creation = now;
 	}
 
-
 	// ENCRYPT PASSWORD
-	const user = this;
-	if (!user.isModified("password")) {
+	const pyro = this;
+	if (!pyro.isModified("password")) {
 		return next();
 	}
 	bcrypt.genSalt(10, (err, salt) => {
-		bcrypt.hash(user.password, salt, (err, hash) => {
-			user.password = hash;
+		bcrypt.hash(pyro.password, salt, (err, hash) => {
+			pyro.password = hash;
 			next();
 		});
 	});
 });
 
 // Need to use function to enable this.password to work.
-UserSchema.methods.comparePassword = function (password, done) {
+PyroSchema.methods.comparePassword = function (password, done) {
 	bcrypt.compare(password, this.password, (err, isMatch) => {
 		done(err, isMatch);
 	});
