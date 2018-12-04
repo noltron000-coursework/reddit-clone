@@ -44,6 +44,8 @@ module.exports = (app) => {
 			});
 	});
 
+
+
 	// SHOW single flare
 	app.get('/flares/:id', function (req, res) {
 		// LOOK UP THE POST
@@ -57,15 +59,18 @@ module.exports = (app) => {
 	});
 
 	// EDIT flare form
+	// TODO
 	app.get('/flares/:id', (req, res) => {
 		res.render('flares-edit')
 	})
 
 	// UPDATE flare
+	// TODO
 	app.get('/flares/:id', (req, res) => {
 	})
 
 	// DELETE flare
+	// TODO
 	app.get('/flares/:id', (req, res) => {
 	})
 };

@@ -26,8 +26,7 @@ const forceNoAuth = (req, res, next) => {
 		return res
 			.status(401)
 			.send({ error: 'access denied' }); // UNAUTHORIZED
-	} else { }
-	next()
+	} else { next() }
 }
 
 const forceAuth = (req, res, next) => {
@@ -35,8 +34,7 @@ const forceAuth = (req, res, next) => {
 		return res
 			.status(401)
 			.send({ error: 'access denied' }); // UNAUTHORIZED
-	} else { }
-	next()
+	} else { next() }
 }
 
 const app = express();

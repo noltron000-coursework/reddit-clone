@@ -12,26 +12,29 @@ module.exports = (app) => {
 		// INSTANTIATE INSTANCE OF EMBER MODEL
 		const ember = new Ember(req.body);
 		ember.author = req.pyro._id;
+
 		// SAVE INSTANCE OF EMBER MODEL TO DB
 		ember
 			.save()
-			.then((ember) => {
+			// Find the perent Flare
+			.then(() => {
 				return Flare.findById(req.params.flareId);
 			})
 			.then((flare) => {
 				flare.embers.unshift(ember);
 				flare.save();
 			})
-			.then((ember) => {
+			// Find the parent Pyromancer
+			.then(() => {
 				return Pyro.findById(req.pyro._id);
 			})
 			.then((pyro) => {
 				pyro.embers.unshift(ember);
 				pyro.save();
 			})
-			.then((pyro) => {
+			.then(() => {
 				// REDIRECT TO THE NEW POST
-				res.redirect("/");
+				res.redirect('/flares/' + req.params.flareId);
 			})
 			.catch((err) => {
 				console.log(err);
