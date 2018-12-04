@@ -44,8 +44,6 @@ module.exports = (app) => {
 			});
 	});
 
-
-
 	// SHOW single flare
 	app.get('/flares/:id', function (req, res) {
 		// LOOK UP THE POST
