@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Ember = require("../models/ember");
 
 
 const FlareSchema = new Schema({
@@ -19,6 +20,7 @@ const FlareSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'Ember'
 	}],
+	// embers: [Ember.schema],
 	author: {
 		type: Schema.Types.ObjectId,
 		ref: 'Pyro',
