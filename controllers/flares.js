@@ -48,7 +48,7 @@ module.exports = (app) => {
 	app.get('/flares/:id', function (req, res) {
 		// LOOK UP THE POST
 		Flare.findById(req.params.id)
-			.populate('embers')
+			// .populate('embers')
 			.then((flare) => {
 				res.render('flares-show.hbs', { flare })
 			}).catch((err) => {
