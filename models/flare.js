@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Ember = require("../models/ember");
 
+// Flare -> post
+// Ember -> comment
 
 const FlareSchema = new Schema({
 	title: { // title of post/flare
@@ -16,11 +18,11 @@ const FlareSchema = new Schema({
 		type: String,
 		required: true
 	},
-	embers: [{
-		type: Schema.Types.ObjectId,
-		ref: 'Ember'
-	}],
-	// embers: [Ember.schema],
+	embers: [Ember.schema],
+	// embers: [{
+	// 	type: Schema.Types.ObjectId,
+	// 	ref: Ember
+	// }],
 	author: {
 		type: Schema.Types.ObjectId,
 		ref: 'Pyro',
