@@ -46,7 +46,7 @@ module.exports = (app) => {
 		Flare.findById(req.params.flareId)
 			.then(flare => {
 				// FIND THE CHILD EMBER
-				var ember = flare.embers.id(req.params.emberId);
+				const ember = flare.embers.id(req.params.emberId);
 				// ADD THE REPLY
 				ember.embers.unshift(req.body);
 				// SAVE THE CHANGE TO THE PARENT DOCUMENT
@@ -54,7 +54,7 @@ module.exports = (app) => {
 			})
 			.then(flare => {
 				// REDIRECT TO THE PARENT POST#SHOW ROUTE
-				res.redirect("/flares/" + flare._id);
+				res.redirect("/flares/" + req.params.flareId);
 			})
 			.catch(err => {
 				console.log(err.message);
