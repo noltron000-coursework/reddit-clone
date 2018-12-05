@@ -12,7 +12,6 @@ module.exports = (app) => {
 		// INSTANTIATE INSTANCE OF EMBER MODEL
 		const ember = new Ember(req.body);
 		ember.author = req.pyro._id;
-
 		// SAVE INSTANCE OF EMBER MODEL TO DB
 		ember
 			.save()
@@ -38,6 +37,27 @@ module.exports = (app) => {
 			})
 			.catch((err) => {
 				console.log(err);
+			});
+	});
+
+	// CREATE NESTED EMBER
+	app.post("/flares/:flareId/embers/:emberId/new", (req, res) => {
+		// LOOKUP THE PARENT
+		Flare.findById(req.params.flareId)
+			.then(flare => {
+				// FIND THE CHILD EMBER
+				const ember = flare.embers.id(req.params.emberId);
+				// ADD THE REPLY
+				ember.embers.unshift(req.body);
+				// SAVE THE CHANGE TO THE PARENT DOCUMENT
+				return flare.save();
+			})
+			.then(flare => {
+				// REDIRECT TO THE PARENT POST#SHOW ROUTE
+				res.redirect("/flares/" + req.params.flareId);
+			})
+			.catch(err => {
+				console.log(err.message);
 			});
 	});
 };
