@@ -74,6 +74,7 @@ const subflames = require('./controllers/subflames.js')(app);
 const flares = require('./controllers/flares.js')(app);
 const embers = require('./controllers/embers.js')(app);
 const auth = require('./controllers/auth.js')(app);
+const replies = require('./controllers/replies.js')
 const data = require('./data/flamewarz-db.js');
 
 // setting up basic routes
