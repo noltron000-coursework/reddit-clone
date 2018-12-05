@@ -5,9 +5,8 @@ const should = chai.should();
 chai.use(chaiHttp);
 
 const agent = chai.request.agent(server);
-
 const Pyro = require("../models/pyro");
 
-describe("Pyro", function () {
-	// TESTS WILL GO HERE.
-});
+// describe("Pyro", function () {
+// 	// TESTS WILL GO HERE.
+// });
