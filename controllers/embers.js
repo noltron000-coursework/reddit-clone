@@ -40,8 +40,24 @@ module.exports = (app) => {
 			});
 	});
 
-	// CREATE EMBER REPLY
+	// CREATE NESTED EMBER
 	app.post("/flares/:flareId/embers/:emberId/new", (req, res) => {
-		console.log(req.body);
+		// LOOKUP THE PARENT
+		Flare.findById(req.params.flareId)
+			.then(flare => {
+				// FIND THE CHILD EMBER
+				var ember = flare.embers.id(req.params.emberId);
+				// ADD THE REPLY
+				ember.embers.unshift(req.body);
+				// SAVE THE CHANGE TO THE PARENT DOCUMENT
+				return flare.save();
+			})
+			.then(flare => {
+				// REDIRECT TO THE PARENT POST#SHOW ROUTE
+				res.redirect("/flares/" + flare._id);
+			})
+			.catch(err => {
+				console.log(err.message);
+			});
 	});
 };
