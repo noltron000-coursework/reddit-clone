@@ -8,5 +8,10 @@ const agent = chai.request.agent(server);
 const Pyro = require("../models/pyro");
 
 // describe("Pyro", function () {
-// 	// TESTS WILL GO HERE.
+// 	it("should not be able to login if they have not registered", done => {
+// 		agent.post("/login", { email: "wrong@wrong.com", password: "nope" }).end(function (err, res) {
+// 			res.status.should.be.equal(401);
+// 			done();
+// 		});
+// 	});
 // });

@@ -16,7 +16,7 @@ Flare.findOneAndRemove(flare, () => {
 		let flareCount = flares.count;
 
 		chai
-			.request('localhost:8080')
+			.request('localhost:8000')
 			.post('/flares/new')
 			.send(flare)
 			.then(res => {
