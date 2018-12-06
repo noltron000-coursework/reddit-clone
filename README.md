@@ -87,11 +87,13 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 			- ~~What is the difference from when it is checked or not?~~
 
 ### Controllers Etc.
-- [ ] Testing
+- [X] Testing
 	- [X] Test suite for `auth.js` & pyros
-	- [ ] Test suite for `subflames.js`
-	- [ ] Test suite for `flares.js`
-	- [ ] Test suite for `embers.js`
+	- [ ] ~~Test suite for `subflames.js`~~ (**stretch goal**)
+	- [ ] ~~Test suite for `flares.js`~~ (**stretch goal**)
+		- [ ] ~~Test flares#create~~
+		- [ ] ~~Test inability to create flares if not logged in~~
+	- [ ] ~~Test suite for `embers.js`~~ (**stretch goal**)
 - [X] Connect embers, flares, and subflames
 	- [X] Each subflame has one parent document
 	- [X] Each subflame has many flares
