@@ -12,10 +12,10 @@ module.exports = (app) => {
 		// INSTANTIATE INSTANCE OF EMBER MODEL
 		const ember = new Ember(req.body);
 		ember.author = req.pyro._id;
-		// SAVE INSTANCE OF EMBER MODEL TO DB
 		ember
+			// Save instance to DB
 			.save()
-			// Find the perent Flare
+			// Find the parent Flare
 			.then(() => {
 				return Flare.findById(req.params.flareId);
 			})
@@ -23,16 +23,18 @@ module.exports = (app) => {
 				flare.embers.unshift(ember);
 				flare.save();
 			})
-			// Find the parent Pyromancer
+
+			// FIND AUTHOR AND UPDATE THEIR EMBERS
 			.then(() => {
 				return Pyro.findById(req.pyro._id);
 			})
+			// Find the author, save its posts
 			.then((pyro) => {
 				pyro.embers.unshift(ember);
 				pyro.save();
 			})
+			// Redirect to original Flare
 			.then(() => {
-				// REDIRECT TO THE NEW POST
 				res.redirect('/flares/' + req.params.flareId);
 			})
 			.catch((err) => {
@@ -41,23 +43,43 @@ module.exports = (app) => {
 	});
 
 	// CREATE NESTED EMBER
+	// TODO: find a way to prevent unauthorized users
+	// from accessing this ROUTE or variable URL via Middleware
+	// akin to checkAuth in server.js
 	app.post("/flares/:flareId/embers/:emberId/replies", (req, res) => {
-		// LOOKUP THE PARENT
-		Flare.findById(req.params.flareId)
-			.then(flare => {
-
-				// FIND THE CHILD EMBER
-				const ember = flare.embers.id(req.params.emberId);
-				const finalEmber = new Ember(req.body);
-				// ADD THE REPLY
-				ember.embers.unshift(finalEmber);
-
-				// SAVE THE CHANGE TO THE PARENT DOCUMENT
-				return flare.save();
+		// INSTANTIATE INSTANCE OF EMBER MODEL
+		const newEmber = new Ember(req.body);
+		newEmber.author = req.pyro._id;
+		newEmber
+			// Save instance to DB
+			.save()
+			// Find the parent Flare
+			.then(() => {
+				return Flare.findById(req.params.flareId);
 			})
-			.then(flare => {
-				// REDIRECT TO THE NEW POST
-				res.redirect('/flares/' + flare._id);
+
+			// Find the parent Ember
+			.then((flare) => {
+				const parEmber = flare.embers.id(req.params.emberId);
+				// Save new Ember content in Flare & parent Ember
+				parEmber.embers.unshift(newEmber);
+				parEmber.save()
+				flare.save();
+			})
+
+			// FIND AUTHOR AND UPDATE THEIR EMBERS
+			.then(() => {
+				return Pyro.findById(req.pyro._id);
+			})
+			// Find the author, save its posts
+			.then((pyro) => {
+				pyro.embers.unshift(newEmber);
+				pyro.save();
+			})
+
+			// REDIRECT TO ORIGINAL FLARE
+			.then(() => {
+				res.redirect('/flares/' + req.params.flareId);
 			})
 			.catch(err => {
 				console.log(err.message);
