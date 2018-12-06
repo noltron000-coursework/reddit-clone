@@ -7,9 +7,11 @@
 					{{> jeers }}
 					<p class='card-text'>{{ this.content }}</p>
 				</div>
+
 				{{#each this.embers}}
 				{{> embers}}
 				{{/each}}
+
 				<form action='/flares/{{ @root.flare._id }}/embers/{{ this._id }}/replies' method='post' class='d-flex'>
 					<div class="flex-grow-1 mt-3 mb-3 pr-4">
 						<textarea class='form-control' rows='1' name='content' placeholder='Spark up an ember!'></textarea>

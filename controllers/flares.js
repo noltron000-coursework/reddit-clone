@@ -6,6 +6,7 @@ module.exports = (app) => {
 	// INDEX all flares
 	app.get('/flares', (req, res) => {
 		Flare.find({})
+			.populate('author')
 			.then(flares => {
 				res.render('flares-index', { flares });
 			})
@@ -48,6 +49,7 @@ module.exports = (app) => {
 	app.get('/flares/:id', function (req, res) {
 		// LOOK UP THE POST
 		Flare.findById(req.params.id)
+			.populate('author')
 			// .populate('embers')
 			.then((flare) => {
 				res.render('flares-show.hbs', { flare })
