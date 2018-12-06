@@ -12,8 +12,7 @@ const EmberSchema = new Schema({
 	}],
 	author: {
 		type: Schema.Types.ObjectId,
-		ref: 'Pyro',
-		required: true
+		ref: 'Pyro'
 	}
 });
 

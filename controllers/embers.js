@@ -41,20 +41,23 @@ module.exports = (app) => {
 	});
 
 	// CREATE NESTED EMBER
-	app.post("/flares/:flareId/embers/:emberId/new", (req, res) => {
+	app.post("/flares/:flareId/embers/:emberId/replies", (req, res) => {
 		// LOOKUP THE PARENT
 		Flare.findById(req.params.flareId)
 			.then(flare => {
+
 				// FIND THE CHILD EMBER
 				const ember = flare.embers.id(req.params.emberId);
+				const finalEmber = new Ember(req.body);
 				// ADD THE REPLY
-				ember.embers.unshift(req.body);
+				ember.embers.unshift(finalEmber);
+
 				// SAVE THE CHANGE TO THE PARENT DOCUMENT
 				return flare.save();
 			})
 			.then(flare => {
-				// REDIRECT TO THE PARENT POST#SHOW ROUTE
-				res.redirect("/flares/" + req.params.flareId);
+				// REDIRECT TO THE NEW POST
+				res.redirect('/flares/' + flare._id);
 			})
 			.catch(err => {
 				console.log(err.message);
