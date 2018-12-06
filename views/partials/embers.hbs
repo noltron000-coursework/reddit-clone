@@ -4,7 +4,7 @@
 			<div class='card-body'>
 				<p class='card-text'>{{ this.content }}</p>
 				{{#each this.embers}}
-				{{> embers-show}}
+				{{> embers}}
 				{{/each}}
 				<form action='/flares/{{ @root.flare._id }}/embers/{{ this._id }}/new' method='post'>
 					<div class="mt-3 mb-3">
