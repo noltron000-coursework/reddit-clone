@@ -3,20 +3,24 @@
 
 		<div class='card mt-3 mb-3'>
 			<div class='card-body'>
+				<div class='row'>
+					{{> jeers}}
+					<div class="col-md-10">
+						<h2 class='card-title'>
+							{{flare.title}}
+						</h2>
 
-				<h2 class='card-title'>
-					{{flare.title}}
-				</h2>
+						<h3 class='card-subtitle text-muted'>
+							<a href='/f/{{flare.subflame}}' class='text-muted'>
+								{{flare.subflame}}
+							</a>
+						</h3>
 
-				<h3 class='card-subtitle text-muted'>
-					<a href='/f/{{flare.subflame}}' class='text-muted'>
-						{{flare.subflame}}
-					</a>
-				</h3>
-
-				<p class='card-text lead'>
-					17 embers - 1,235 views - 01/01/19
-				</p>
+						<p class='card-text lead'>
+							17 embers - 1,235 views - 01/01/19
+						</p>
+					</div>
+				</div>
 
 				<p class='card-text'>
 					{{flare.synopsis}}

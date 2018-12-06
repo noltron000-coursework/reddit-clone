@@ -2,7 +2,11 @@
 	<div class='col-sm-12'>
 		<div class='card'>
 			<div class='card-body'>
-				<p class='card-text'>{{ this.content }}</p>
+
+				<div class="row">
+					{{> jeers }}
+					<p class='card-text col-md-10'>{{ this.content }}</p>
+				</div>
 				{{#each this.embers}}
 				{{> embers}}
 				{{/each}}
