@@ -17,14 +17,14 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 
 ## To Do:
 ### Basic `CRUD`
-- [ ] Start Templating
+- [X] Start Templating
 	- [X] Add & connect Handlebars
 	- [X] Add Navbar
 		- [X] Add a logo that links to home
 		- [X] Add an h1 that links to home
 		- [X] Add a CTA button that links to new-flare
 	- (**stretch**) Recolor the theme to match FlameWarz' style
-- [ ] Complete `CRUD` of SubFlames
+- [X] Complete `CRUD` of SubFlames
 	- [X] `index` *View* a list of all subflames
 		- [X] Navigate to view all the flares of the same subflame
 	- [X] `new` *View* subflame creation page
@@ -32,10 +32,10 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Add a subflame attribute to our flare resource
 		- (**stretch**) Make its ID a hyphen-deliminated string based on its title
 	- [X] `show` *View* a single subflame in detail
-	- [ ] `edit` *View* subflame update-content page
-	- [ ] `update` *Actionably* update a subflame
-	- [ ] `destroy` *Actionably* delete a subflame
-- [ ] Complete `CRUD` of Flares
+	- (**stretch**) `edit` *View* subflame update-content page
+	- (**stretch**) `update` *Actionably* update a subflame
+	- (**stretch**) `destroy` *Actionably* delete a subflame
+- [X] Complete `CRUD` of Flares
 	- [X] `index` *View* a list of all flares (on current `show` subflame)
 		- [X] Make the index route @ `/flares` go to the `flares-index` route
 		- [X] Render a flares-index template @ `/flares`
@@ -56,29 +56,29 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Make route to `flares#show` route `/flares/:id`
 		- [X] display the flare object
 		- [X] See & Link the SubFlame
-	- [ ] `edit` *View* flare update-content page
-	- [ ] `update` *Actionably* update a flare
-	- [ ] `destroy` *Actionably* delete a flare
-- [ ] Complete `CRUD` of Embers
+	- (**stretch**) `edit` *View* flare update-content page
+	- (**stretch**) `update` *Actionably* update a flare
+	- (**stretch**) `destroy` *Actionably* delete a flare
+- [X] Complete `CRUD` of Embers
 	- [X] `index` *View* a list of all embers (on current `show` flare)
 	- [X] `new` *View* ember creation box (on current `show` flare)
 	- [X] `create` *Actionably* create a ember (on current `show` flare)
 	- (**stretch**) `show` *View* a single ember in detail
-		- Can you show one comment in detail?
-	- [ ] `edit` *View* ember update-content box (on current `show` flare)
-	- [ ] `update` *Actionably* update a ember (on current `show` flare)
-	- [ ] `destroy` *Actionably* delete a ember (on current `show` flare)
-- [ ] Sign Up & Log In (`CRUD` of Pyros)
-	- [ ] `index` *View* a list of all pyromancers
+		- (**stretch**) Can you show one comment in detail?
+	- (**stretch**) `edit` *View* ember update-content box (on current `show` flare)
+	- (**stretch**) `update` *Actionably* update a ember (on current `show` flare)
+	- (**stretch**) `destroy` *Actionably* delete a ember (on current `show` flare)
+- [X] Sign Up & Log In (`CRUD` of Pyros)
+	- (**stretch**) `index` *View* a list of all pyromancers
 	- [X] `new` *View* pyromancer creation page (*sign up*)
 	- [X] `create` *Actionably* create a pyromancer (*sign up*)
 		- [X] use bcrypt.js to encrypt passwords
 	- (**stretch**) `show` *View* a single pyromancer in detail
 		- Can you make an author's username a link that displays that users's profile at `/users/:username`?
 		- Can you make a `/profile` route that loads the current user and displays their posts and comments?
-	- [ ] `edit` *View* pyromancer update-content page
-	- [ ] `update` *Actionably* update a pyromancer
-	- [ ] `destroy` *Actionably* delete a pyromancer
+	- (**stretch**) `edit` *View* pyromancer update-content page
+	- (**stretch**) `update` *Actionably* update a pyromancer
+	- (**stretch**) `destroy` *Actionably* delete a pyromancer
 	- [X] `sign in`
 		- (**stretch**) Require a password confirmation field.
 		- (**stretch**) Plan out how you would do a 'forget password' process.
@@ -108,4 +108,4 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 	- [X] Each flare has one author
 - [ ] `update` Vote a flare up or down
 - [ ] `update` Vote a ember up or down
-- [ ] Search Functionality
+- (**stretch**) Search Functionality
