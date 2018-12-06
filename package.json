@@ -27,7 +27,8 @@
 		"handlebars": "^4.0.12",
 		"jsonwebtoken": "^8.4.0",
 		"mongodb": "^3.1.10",
-		"mongoose": "^5.3.14"
+		"mongoose": "^5.3.14",
+		"simon": "^0.2.3"
 	},
 	"devDependencies": {
 		"chai": "^4.2.0",

@@ -16,6 +16,7 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 	- Robo 3T
 
 ## To Do:
+### Basic `CRUD`
 - [ ] Start Templating
 	- [X] Add & connect Handlebars
 	- [X] Add Navbar
@@ -67,21 +68,14 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 	- [ ] `edit` *View* ember update-content box (on current `show` flare)
 	- [ ] `update` *Actionably* update a ember (on current `show` flare)
 	- [ ] `destroy` *Actionably* delete a ember (on current `show` flare)
-- [X] Connect embers, flares, and subflames
-	- [X] Each subflame has one parent document
-	- [X] Each subflame has many flares
-	- [X] Each flare has one subflame
-	- [X] Each flare has many embers
-	- [X] Each ember has one flare
-	- [ ] ~~Each ember has many embers.~~ (**∞ stretch goal**)
-- [ ] Sign Up & Log In
+- [ ] Sign Up & Log In (`CRUD` of Pyros)
 	- [ ] `index` *View* a list of all pyromancers
 	- [X] `new` *View* pyromancer creation page (*sign up*)
 	- [X] `create` *Actionably* create a pyromancer (*sign up*)
 		- [X] use bcrypt.js to encrypt passwords
 	- [ ] `show` ~~*View* a single pyromancer in detail~~ (**stretch**)
 		- ~~Can you make an author's username a link that displays that users's profile at `/users/:username`?~~
-		- ~~Can you make a /profile route that loads the current user and displays their posts and comments?~~
+		- ~~Can you make a `/profile` route that loads the current user and displays their posts and comments?~~
 	- [ ] `edit` *View* pyromancer update-content page
 	- [ ] `update` *Actionably* update a pyromancer
 	- [ ] `destroy` *Actionably* delete a pyromancer
@@ -91,6 +85,22 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 	- [X] `sign out`
 		- [ ] ~~Add a Remember Me checkbox~~ (**stretch goal**)
 			- ~~What is the difference from when it is checked or not?~~
+
+### Controllers Etc.
+- [X] Testing
+	- [X] Test suite for `auth.js` & pyros
+	- [ ] ~~Test suite for `subflames.js`~~ (**stretch goal**)
+	- [ ] ~~Test suite for `flares.js`~~ (**stretch goal**)
+		- [ ] ~~Test flares#create~~
+		- [ ] ~~Test inability to create flares if not logged in~~
+	- [ ] ~~Test suite for `embers.js`~~ (**stretch goal**)
+- [X] Connect embers, flares, and subflames
+	- [X] Each subflame has one parent document
+	- [X] Each subflame has many flares
+	- [X] Each flare has one subflame
+	- [X] Each flare has many embers
+	- [X] Each ember has one flare
+	- [ ] ~~Each ember has many embers.~~ (**∞ stretch goal**)
 - [X] Associate flares, embers, and votes with their author
 	- [X] Each author has many embers
 	- [X] Each ember has one author

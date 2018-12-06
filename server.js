@@ -38,7 +38,7 @@ const forceAuth = (req, res, next) => {
 }
 
 const app = express();
-const port = 8000;
+const port = 3000;
 
 
 /* all middleware must appear after express(); is initialized. */

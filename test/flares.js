@@ -1,3 +1,8 @@
+const chai = require("chai");
+const chaiHttp = require("chai-http");
+const server = require("../server");
+const should = chai.should();
+
 const Flare = require('../models/flare');
 
 const flare = {
@@ -7,7 +12,7 @@ const flare = {
 };
 
 Flare.findOneAndRemove(flare, () => {
-	Flares.find((err, flares) => {
+	Flare.find((err, flares) => {
 		let flareCount = flares.count;
 
 		chai
