@@ -14,6 +14,9 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 	- MongoDB
 	- Mongoose
 	- Robo 3T
+- Testing:
+	- Chai
+	- Mocha
 
 ## To Do:
 ### Basic `CRUD`
