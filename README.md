@@ -23,14 +23,14 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Add a logo that links to home
 		- [X] Add an h1 that links to home
 		- [X] Add a CTA button that links to new-flare
-	- [ ] Recolor the theme to match FlameWarz' style
+	- (**stretch**) Recolor the theme to match FlameWarz' style
 - [ ] Complete `CRUD` of SubFlames
 	- [X] `index` *View* a list of all subflames
 		- [X] Navigate to view all the flares of the same subflame
 	- [X] `new` *View* subflame creation page
 	- [X] `create` *Actionably* create a subflame
 		- [X] Add a subflame attribute to our flare resource
-		- [ ] Make its ID a hyphen-deliminated string based on its title (**stretch goal**)
+		- (**stretch**) Make its ID a hyphen-deliminated string based on its title
 	- [X] `show` *View* a single subflame in detail
 	- [ ] `edit` *View* subflame update-content page
 	- [ ] `update` *Actionably* update a subflame
@@ -45,13 +45,13 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 		- [X] Make a flares#new route (/flares/new) and template (flares-new.hbs)
 		- [X] Add form to flares-new template
 		- [X] See each existing subflame, and choose one
-		- [ ] ~~Able to search for a subflame~~ (**stretch goal**)
-		- [ ] ~~If you create a flare from a subflame, it is automatically entered~~ (**stretch goal**)
+		- (**stretch**) Able to search for a subflame
+		- (**stretch**) If you create a flare from a subflame, it is automatically entered
 	- [X] `create` *Actionably* create a flare
 		- [X] Make create flares route and check that form data is sending to new route
 		- [X] Add Post model with mongoose
 		- [X] Confirm flares are saving to database
-		- [ ] ~~Error Handling for missing fields~~ (**stretch goal**)
+		- (**stretch**) Error Handling for missing fields
 	- [X] `show` *View* a single flare in detail
 		- [X] Make route to `flares#show` route `/flares/:id`
 		- [X] display the flare object
@@ -63,8 +63,8 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 	- [X] `index` *View* a list of all embers (on current `show` flare)
 	- [X] `new` *View* ember creation box (on current `show` flare)
 	- [X] `create` *Actionably* create a ember (on current `show` flare)
-	- [ ] ~~`show` *View* a single ember in detail~~ (**stretch goal**)
-		- ~~Can you show one comment in detail?~~
+	- (**stretch**) `show` *View* a single ember in detail
+		- Can you show one comment in detail?
 	- [ ] `edit` *View* ember update-content box (on current `show` flare)
 	- [ ] `update` *Actionably* update a ember (on current `show` flare)
 	- [ ] `destroy` *Actionably* delete a ember (on current `show` flare)
@@ -73,34 +73,34 @@ See the tutorial: <a href='https://www.makeschool.com/academy/track/reddit-clone
 	- [X] `new` *View* pyromancer creation page (*sign up*)
 	- [X] `create` *Actionably* create a pyromancer (*sign up*)
 		- [X] use bcrypt.js to encrypt passwords
-	- [ ] `show` ~~*View* a single pyromancer in detail~~ (**stretch**)
-		- ~~Can you make an author's username a link that displays that users's profile at `/users/:username`?~~
-		- ~~Can you make a `/profile` route that loads the current user and displays their posts and comments?~~
+	- (**stretch**) `show` *View* a single pyromancer in detail
+		- Can you make an author's username a link that displays that users's profile at `/users/:username`?
+		- Can you make a `/profile` route that loads the current user and displays their posts and comments?
 	- [ ] `edit` *View* pyromancer update-content page
 	- [ ] `update` *Actionably* update a pyromancer
 	- [ ] `destroy` *Actionably* delete a pyromancer
 	- [X] `sign in`
-		- [ ] ~~Require a password confirmation field.~~ (**stretch goal**)
-		- [ ] ~~Plan out how you would do a 'forget password' process.~~ (**stretch goal**)
+		- (**stretch**) Require a password confirmation field.
+		- (**stretch**) Plan out how you would do a 'forget password' process.
 	- [X] `sign out`
-		- [ ] ~~Add a Remember Me checkbox~~ (**stretch goal**)
-			- ~~What is the difference from when it is checked or not?~~
+		- (**stretch**) Add a Remember Me checkbox
+			- What is the difference from when it is checked or not?
 
 ### Controllers Etc.
 - [X] Testing
 	- [X] Test suite for `auth.js` & pyros
-	- [ ] ~~Test suite for `subflames.js`~~ (**stretch goal**)
-	- [ ] ~~Test suite for `flares.js`~~ (**stretch goal**)
-		- [ ] ~~Test flares#create~~
-		- [ ] ~~Test inability to create flares if not logged in~~
-	- [ ] ~~Test suite for `embers.js`~~ (**stretch goal**)
+	- (**stretch**) Test suite for `subflames.js`
+	- (**stretch**) Test suite for `flares.js`
+		- (**stretch**) Test flares#create
+		- (**stretch**) Test inability to create flares if not logged in
+	- (**stretch**) Test suite for `embers.js`
 - [X] Connect embers, flares, and subflames
 	- [X] Each subflame has one parent document
 	- [X] Each subflame has many flares
 	- [X] Each flare has one subflame
 	- [X] Each flare has many embers
 	- [X] Each ember has one flare
-	- [ ] ~~Each ember has many embers.~~ (**∞ stretch goal**)
+	- (**stretch**) Each ember has many embers.
 - [X] Associate flares, embers, and votes with their author
 	- [X] Each author has many embers
 	- [X] Each ember has one author
