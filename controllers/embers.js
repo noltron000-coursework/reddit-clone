@@ -2,7 +2,6 @@ const Ember = require('../models/ember');
 const Flare = require('../models/flare');
 const Pyro = require('../models/pyro');
 
-
 module.exports = (app) => {
 	// CREATE EMBER
 	// TODO: find a way to prevent unauthorized users
@@ -42,25 +41,37 @@ module.exports = (app) => {
 	});
 
 	// CREATE NESTED EMBER
-	app.post("/flares/:flareId/embers/:emberId/replies", (req, res) => {
-		// LOOKUP THE PARENT
-		Flare.findById(req.params.flareId)
-			.then(flare => {
-
-				// FIND THE CHILD EMBER
-				const ember = flare.embers.id(req.params.emberId);
-				const finalEmber = new Ember(req.body);
-				// ADD THE REPLY
-				ember.embers.unshift(finalEmber);
-
-				// SAVE THE CHANGE TO THE PARENT DOCUMENT
-				return flare.save();
+	// TODO: find a way to prevent unauthorized users
+	// from accessing this ROUTE or variable URL via Middleware
+	// akin to checkAuth in server.js
+	app.post('/flares/:flareId/embers/:emberId/replies', (req, res) => {
+		// INSTANTIATE INSTANCE OF EMBER MODEL
+		const ember = new Ember(req.body);
+		ember.author = req.pyro._id;
+		ember
+			.save()
+			// Find Parent Ember
+			.then(() => {
+				return Ember.findById(req.params.emberId)
 			})
-			.then(flare => {
-				// REDIRECT TO THE NEW POST
-				res.redirect('/flares/' + flare._id);
+			.then((parent) => {
+				parent.embers.unshift(ember)
+				parent.save()
 			})
-			.catch(err => {
+			// Find the Pyromancer author
+			.then(() => {
+				return Pyro.findById(req.pyro._id);
+			})
+			// Save the author's posts
+			.then((pyro) => {
+				pyro.embers.unshift(ember);
+				pyro.save();
+			})
+			// Redirect to original Flare
+			.then(() => {
+				res.redirect('/flares/' + req.params.flareId);
+			})
+			.catch((err) => {
 				console.log(err.message);
 			});
 	});

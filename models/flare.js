@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const Ember = require('../models/ember');
 const Schema = mongoose.Schema;
-const Ember = require("../models/ember");
 
 // Flare -> post
 // Ember -> comment

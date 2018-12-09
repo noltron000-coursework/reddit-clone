@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const Autopopulate = require('../utilities/autopopulate');
 const Schema = mongoose.Schema;
-
 
 const PyroSchema = new Schema({
 	pyroname: {
@@ -30,7 +30,8 @@ const PyroSchema = new Schema({
 	updation: {
 		type: Date
 	}
-});
+}).pre('findOne', Autopopulate('embers'))
+	.pre('find', Autopopulate('embers'));
 
 // Define the callback with a regular function to avoid problems with this
 PyroSchema.pre('save', function (next) {
