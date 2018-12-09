@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Autopopulate = require('../utilities/autopopulate');
 const Ember = require('../models/ember');
 const Schema = mongoose.Schema;
 
@@ -18,11 +19,11 @@ const FlareSchema = new Schema({
 		type: String,
 		required: true
 	},
-	embers: [Ember.schema],
-	// embers: [{
-	// 	type: Schema.Types.ObjectId,
-	// 	ref: Ember
-	// }],
+	// embers: [Ember.schema],
+	embers: [{
+		type: Schema.Types.ObjectId,
+		ref: Ember
+	}],
 	author: {
 		type: Schema.Types.ObjectId,
 		ref: 'Pyro',
@@ -34,7 +35,8 @@ const FlareSchema = new Schema({
 	updation: { // updation is like creation
 		type: Date
 	}
-});
+}).pre('findOne', Autopopulate('embers'))
+	.pre('find', Autopopulate('embers'));
 
 FlareSchema.pre('save', (next) => {
 	// SET createdAt AND updatedAt
