@@ -8,8 +8,8 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
 const checkAuth = (req, res, next) => {
-	console.log('Checking authentication:');
-	console.log(req.cookies);
+	// console.log('Checking authentication:');
+	// console.log(req.cookies);
 	if (typeof req.cookies.nToken === 'undefined' || req.cookies.nToken === null) {
 		req.pyro = null;
 	} else {
@@ -40,8 +40,10 @@ const forceAuth = (req, res, next) => {
 const app = express();
 const port = 3000;
 
-
 /* all middleware must appear after express(); is initialized. */
+
+// serve static or public folder
+app.use(express.static('static'))
 
 // set up handlebars
 app.engine('.hbs', exprHBS({ extname: '.hbs', defaultLayout: 'main' }));
@@ -60,14 +62,12 @@ app.use(exprVld());
 app.use(cookieParser());
 
 // // use method override - with POST having ?_method=DELETE or ?_method=PUT
-// app.use(express.static('public'));
 // app.use(methodOverride('_method'));
 
 // use checkAuth custom middleware
 app.use(checkAuth);
 app.get(('/login', '/signup'), forceNoAuth);
 app.get(('/f/new', '/flares/new', '/flares/:flareId/embers'), forceAuth);
-
 
 // require other files
 const subflames = require('./controllers/subflames.js')(app);

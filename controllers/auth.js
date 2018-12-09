@@ -71,7 +71,7 @@ module.exports = (app) => {
 					res.redirect('/');
 				});
 			})
-			.catch(err => {
+			.catch((err) => {
 				console.log(err);
 			});
 	});

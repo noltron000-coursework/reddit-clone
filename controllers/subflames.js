@@ -25,11 +25,11 @@ module.exports = (app) => {
 		// instantiate instance of subflame model
 		const subflame = new SubFlame(req.body);
 		// save instance of subflame model to db
-		console.log(req.body);
+		// console.log(req.body);
 		subflame
 			.save((err, subflame) => {
 				console.log(err);
-				console.log(subflame);
+				// console.log(subflame);
 				res.redirect('/f');
 			});
 	});

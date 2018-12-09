@@ -27,7 +27,7 @@ describe("Pyro", function () {
 				.post("/signup")
 				.send({ pyroname: "testone", password: "password", email: "email" })
 				.end(function (err, res) {
-					console.log(res.body);
+					// console.log(res.body);
 					res.should.have.status(200);
 					agent.should.have.cookie("nToken");
 					done();
