@@ -28,6 +28,7 @@
 		"jsonwebtoken": "^8.4.0",
 		"mongodb": "^3.1.10",
 		"mongoose": "^5.3.15",
+		"node": "^11.3.0",
 		"simon": "^0.2.3"
 	},
 	"devDependencies": {
