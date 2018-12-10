@@ -38,7 +38,7 @@ module.exports = (app) => {
 				pyro.flares.unshift(flare);
 				pyro.save();
 				// REDIRECT TO THE NEW POST
-				res.redirect("/flares/" + flare._id);
+				res.redirect('/flares/' + flare._id);
 			})
 			.catch((err) => {
 				console.log(err.message);
@@ -70,19 +70,23 @@ module.exports = (app) => {
 	})
 
 	// UPDATE flare via downvote
-	app.put("/flares/:id/jeers", function (req, res) {
-		console.log("SUCCESS")
+	app.put('/flares/:id/jeers', function (req, res) {
+		console.log('SUCCESS')
 		Flare
 			.findById(req.params.id)
 			.exec(function (err, flare) {
 				flare.voters.push(req.pyro._id);
 				flare.rating -= 1;
 				flare.save();
-				console.log("IT GOT HERE \n\n\n");
-				res.status(200);
+				console.log("GOT HERE 1")
+			})
+			.then(() => {
+				// its not getting here :(
+				console.log("GOT HERE 2")
+				res.redirect('/')
 			})
 			.catch((error) => {
-				console.log(error)
+				// console.log(error)
 			});
 	});
 
