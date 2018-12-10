@@ -19,10 +19,9 @@ const FlareSchema = new Schema({
 		type: String,
 		required: true
 	},
-	// embers: [Ember.schema],
 	embers: [{
 		type: Schema.Types.ObjectId,
-		ref: Ember
+		ref: 'Ember'
 	}],
 	author: {
 		type: Schema.Types.ObjectId,
@@ -34,7 +33,15 @@ const FlareSchema = new Schema({
 	},
 	updation: { // updation is like creation
 		type: Date
-	}
+	},
+	rating: {
+		type: Number,
+		default: 0
+	},
+	voters: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Pyro'
+	}]
 }).pre('findOne', Autopopulate('embers'))
 	.pre('find', Autopopulate('embers'));
 

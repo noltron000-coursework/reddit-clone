@@ -69,6 +69,23 @@ module.exports = (app) => {
 	app.get('/flares/:id', (req, res) => {
 	})
 
+	// UPDATE flare via downvote
+	app.put("/flares/:id/jeers", function (req, res) {
+		console.log("SUCCESS")
+		Flare
+			.findById(req.params.id)
+			.exec(function (err, flare) {
+				flare.voters.push(req.pyro._id);
+				flare.rating -= 1;
+				flare.save();
+				console.log("IT GOT HERE \n\n\n");
+				res.status(200);
+			})
+			.catch((error) => {
+				console.log(error)
+			});
+	});
+
 	// DELETE flare
 	// TODO
 	app.get('/flares/:id', (req, res) => {

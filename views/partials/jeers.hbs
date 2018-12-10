@@ -1,8 +1,10 @@
+{{#if authPyro }}
 <form class='jeers' data-id='{{this.id}}{{flare.id}}'>
 	<button type='submit' class='btn btn-danger text-center mr-4' style=' width: 100px'>
 		<h3>
 			&#128078;
 		</h3>
-		<p class='text-center text-white card-text'>–100</p>
+		<p class='text-center text-white card-text'>{{this.rating}}{{flare.rating}}</p>
 	</button>
 </form>
+{{/if}}
