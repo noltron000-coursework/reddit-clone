@@ -4,7 +4,8 @@ const Flare = require('../models/flare');
 module.exports = (app) => {
 	// INDEX all subflames
 	app.get('/f', (req, res) => {
-		SubFlame.find({})
+		SubFlame
+			.find({})
 			.then(subflames => {
 				res.render('subflames-index', {
 					subflames

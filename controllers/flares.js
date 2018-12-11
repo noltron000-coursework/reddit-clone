@@ -78,11 +78,10 @@ module.exports = (app) => {
 				flare.voters.push(req.pyro._id);
 				flare.rating -= 1;
 				flare.save();
-				console.log("GOT HERE 1")
 			})
 			.then(() => {
 				// its not getting here :(
-				console.log("GOT HERE 2")
+				console.log("GOT HERE")
 				res.redirect('/')
 			})
 			.catch((error) => {

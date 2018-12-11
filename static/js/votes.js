@@ -9,6 +9,8 @@ $(document).ready(function () {
 				console.log("OOHHHHHH--BURN!!!!!!!!");
 			},
 			error: function (err) {
+				let jeers = $('.jeers p').html();
+				$('.jeers p').html(parseInt(jeers) - 1);
 				console.log(err.messsage);
 			}
 		});
