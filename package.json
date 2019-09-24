@@ -12,5 +12,8 @@
 	"bugs": {
 		"url": "https://github.com/noltron000/reddit-clone/issues"
 	},
-	"homepage": "https://github.com/noltron000/reddit-clone#readme"
+	"homepage": "https://github.com/noltron000/reddit-clone#readme",
+	"devDependencies": {
+		"typescript": "^3.6.3"
+	}
 }
