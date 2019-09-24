@@ -1,41 +1,16 @@
 {
 	"name": "reddit-clone",
-	"version": "1.0.0",
-	"description": "Make School's Reddit clone tutorial Nov.26",
+	"version": "1.1.0",
+	"description": "Make School's Reddit clone tutorial--Created November 2018, Updated September 2019",
 	"main": "server.js",
-	"scripts": {
-		"test": "mocha"
-	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/noltron000/BEW-1-2_reddit-clone.git"
+		"url": "git+https://github.com/noltron000/reddit-clone.git"
 	},
 	"author": "Nolan Kovacik",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/noltron000/BEW-1-2_reddit-clone/issues"
+		"url": "https://github.com/noltron000/reddit-clone/issues"
 	},
-	"homepage": "https://github.com/noltron000/BEW-1-2_reddit-clone#readme",
-	"dependencies": {
-		"bcrypt": "^3.0.2",
-		"bcryptjs": "^2.4.3",
-		"body-parser": "^1.18.3",
-		"cookie-parser": "^1.4.3",
-		"dotenv": "^6.2.0",
-		"express-handlebars": "^3.0.0",
-		"express-validator": "^5.3.0",
-		"handlebars": "^4.0.12",
-		"jquery": "^3.3.1",
-		"jsonwebtoken": "^8.4.0",
-		"mongodb": "^3.1.10",
-		"mongoose": "^5.3.15",
-		"node": "^11.3.0",
-		"simon": "^0.2.3"
-	},
-	"devDependencies": {
-		"chai": "^4.2.0",
-		"chai-http": "^4.2.0",
-		"mocha": "^5.2.0",
-		"nodemon": "^1.18.7"
-	}
+	"homepage": "https://github.com/noltron000/reddit-clone#readme"
 }
