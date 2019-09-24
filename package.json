@@ -13,6 +13,9 @@
 		"url": "https://github.com/noltron000/reddit-clone/issues"
 	},
 	"homepage": "https://github.com/noltron000/reddit-clone#readme",
+	"scripts": {
+		"tsc": "tsc"
+	},
 	"devDependencies": {
 		"typescript": "^3.6.3"
 	}
