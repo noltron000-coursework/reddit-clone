@@ -27,7 +27,7 @@
 		"handlebars": "^4.0.12",
 		"jquery": "^3.3.1",
 		"jsonwebtoken": "^8.4.0",
-		"mongodb": "^3.1.10",
+		"mongodb": "^3.1.13",
 		"mongoose": "^5.3.15",
 		"node": "^11.3.0",
 		"simon": "^0.2.3"
